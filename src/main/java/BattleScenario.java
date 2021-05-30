@@ -110,7 +110,7 @@ public class BattleScenario {
       * TO DO: Implement for Assignment 3
       * This method implements the calculation of damage for one specific attack.
       * One monster attacks with the given damage, the dealt damage is then calculated through
-      * (pAttackDamage * pAttacker.weatherBonus * pAttacker.typeBonus) -
+      * (pAttackDamage * pAttacker.attack * pAttacker.weatherBonus * pAttacker.typeBonus) -
                 (pDefender.stats.defense * pDefender.weatherBonus * pDefender.typeBonus)
       * If the initial pAttackDamage is 0, then the damage dealt is 0. If the totalDamage calculated
       * is negative, the totalDamage dealt should be 1. Any positive value is the total damage dealt.
