@@ -1,0 +1,531 @@
+
+*BULLY launches an attack against RALPHIE!
+0bully uses Sleep, increasing health stat by 10%
+0.0 damage dealt
+RALPHIE has 105.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 115.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Splash
+8.0 damage dealt
+RALPHIE has 97.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Ground Stomp
+6.0 damage dealt
+BULLY has 109.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 89.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Ground Stomp
+6.0 damage dealt
+BULLY has 103.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Ground Pound
+8.0 damage dealt
+RALPHIE has 81.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Flaming Horn
+6.0 damage dealt
+BULLY has 97.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 73.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 91.0 health left
+
+*BULLY launches an attack against RALPHIE!
+0bully uses Sleep, increasing health stat by 10%
+0.0 damage dealt
+RALPHIE has 73.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Ground Stomp
+6.0 damage dealt
+BULLY has 94.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Splash
+8.0 damage dealt
+RALPHIE has 65.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Flaming Horn
+6.0 damage dealt
+BULLY has 88.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 57.0 health left
+
+*RALPHIE launches an attack against BULLY!
+7ralphie uses Iron Hide, increasing defense stat by 10%
+0.0 damage dealt
+BULLY has 88.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Ground Pound
+8.0 damage dealt
+RALPHIE has 49.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 82.0 health left
+
+*BULLY launches an attack against RALPHIE!
+0bully uses Sleep, increasing health stat by 10%
+0.0 damage dealt
+RALPHIE has 49.0 health left
+
+*RALPHIE launches an attack against BULLY!
+7ralphie uses Iron Hide, increasing defense stat by 10%
+0.0 damage dealt
+BULLY has 90.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 41.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 84.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 33.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 78.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 25.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Flaming Horn
+6.0 damage dealt
+BULLY has 72.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Splash
+8.0 damage dealt
+RALPHIE has 17.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Flaming Horn
+6.0 damage dealt
+BULLY has 66.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Splash
+8.0 damage dealt
+RALPHIE has 9.0 health left
+
+*RALPHIE launches an attack against BULLY!
+ralphie uses Headbutt
+6.0 damage dealt
+BULLY has 60.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Body Slam
+8.0 damage dealt
+RALPHIE has 1.0 health left
+
+*RALPHIE launches an attack against BULLY!
+7ralphie uses Iron Hide, increasing defense stat by 10%
+0.0 damage dealt
+BULLY has 60.0 health left
+
+*BULLY launches an attack against RALPHIE!
+bully uses Splash
+8.0 damage dealt
+RALPHIE has -7.0 health left
+ RALPHIE has fainted in round 17
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsSRainyFire
+         Damage dealt: 71.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsBNeutralWater
+         Damage dealt: 44.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsRSunnyGround
+         Damage dealt: 61.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsRNeutralFire
+         Damage dealt: 74.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsBNeutralGround
+         Damage dealt: 20.0
+	,public BattleScenario1(Mascotmon,Mascotmon)
+	    BvsSNeutralNone
+	         Damage dealt: 0.0
+
+,public BattleScenario1(Mascotmon,Mascotmon)
+
+    RvsBDroughtWater
+
+         Damage dealt: 8.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsBSunnyFire
+         Damage dealt: 83.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsASunnyGround
+         Damage dealt: 30.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    RvsASunnyNormal
+         Damage dealt: 15.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    RvsADroughtGround
+         Damage dealt: 36.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    BvsSNeutralGround
+         Damage dealt: -41.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    BvsBNeutralGround
+         Damage dealt: 0.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsBDroughtGround
+         Damage dealt: 40.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    BvsSNeutralGround
+         Damage dealt: 160.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsASunnyGround
+4Easter egg 1 (you found one error): https://www.you
+         Damage dealt: 58.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsBSunnyGround
+         Damage dealt: 48.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsBRAinyWater
+         Damage dealt: 65.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsBRainyGround
+         Damage dealt: 35.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    AvsRSunnyFire
+         Damage dealt: -36.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    RvsSSunnyNormal
+         Damage dealt: -40.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsBDroughtFire
+         Damage dealt: 68.0
+,public BattleScenario1(Mascotmon,Mascotmon)
+    SvsRNeutralGround
+         Damage dealt: 39.0
+,public BattleScenario2(Mascotmon,Mascotmon)
+    AvsSRainyFire
+         Damage dealt: 71.0
+,public BattleScenario2(Mascotmon,Mascotmon)
+    AvsBNeutralWater
+         Damage dealt: 32.0
+,public BattleScenario2(Mascotmon,Mascotmon)
+    SvsRSunnyGround
+         Damage dealt: 61.0
+,public BattleScenario2(Mascotmon,Mascotmon)
+    SvsRNeutralFire
+         Damage dealt: 56.0
+,public BattleScenario2(Mascotmon,Mascotmon)
+    AvsBNeutralGround
+         Damage dealt: 20.0
+ ,public BattleScenario2(Mascotmon,Mascotmon)
+     BvsSNeutralNone
+ 1Easter egg 2 (you found one error): tube.com/wat
+          Damage dealt: 0.0
+!,public BattleScenario2(Mascotmon,Mascotmon)
+!    RvsBDroughtWater
+!         Damage dealt: 8.0
+",public BattleScenario2(Mascotmon,Mascotmon)
+"    SvsBSunnyFire
+"         Damage dealt: 65.0
+#,public BattleScenario2(Mascotmon,Mascotmon)
+#    AvsASunnyGround
+#         Damage dealt: 15.0
+$,public BattleScenario2(Mascotmon,Mascotmon)
+$    RvsASunnyNormal
+$         Damage dealt: 15.0
+%,public BattleScenario2(Mascotmon,Mascotmon)
+%    RvsADroughtGround
+%         Damage dealt: 26.0
+&,public BattleScenario2(Mascotmon,Mascotmon)
+&    BvsSNeutralGround
+&1Easter egg 2 (you found one error): tube.com/wat
+&         Damage dealt: 0.0
+',public BattleScenario2(Mascotmon,Mascotmon)
+'    BvsBNeutralGround
+'         Damage dealt: 0.0
+(,public BattleScenario2(Mascotmon,Mascotmon)
+(    SvsBDroughtGround
+(         Damage dealt: 40.0
+),public BattleScenario2(Mascotmon,Mascotmon)
+)    BvsSNeutralGround
+)         Damage dealt: 160.0
+*,public BattleScenario2(Mascotmon,Mascotmon)
+*    SvsASunnyGround
+*pEaster egg 6 (you found one error): Ein Computer wird das tun, was du programmierst - nicht das, was du willst.
+*         Damage dealt: 30.0
++,public BattleScenario2(Mascotmon,Mascotmon)
++    SvsBSunnyGround
++         Damage dealt: 48.0
+,,public BattleScenario2(Mascotmon,Mascotmon)
+,    AvsBRAinyWater
+,         Damage dealt: 50.0
+-,public BattleScenario2(Mascotmon,Mascotmon)
+-    AvsBRainyGround
+-         Damage dealt: 35.0
+.,public BattleScenario2(Mascotmon,Mascotmon)
+.    AvsRSunnyFire
+.1Easter egg 2 (you found one error): tube.com/wat
+.         Damage dealt: 0.0
+/,public BattleScenario2(Mascotmon,Mascotmon)
+/    RvsSSunnyNormal
+/.Easter egg 3 (you found one error): ch?v=dQw4
+/1Easter egg 2 (you found one error): tube.com/wat
+/         Damage dealt: 0.0
+0,public BattleScenario2(Mascotmon,Mascotmon)
+0    SvsBDroughtFire
+0         Damage dealt: 54.0
+1,public BattleScenario2(Mascotmon,Mascotmon)
+1    SvsRNeutralGround
+1         Damage dealt: 39.0
+2,public BattleScenario3(Mascotmon,Mascotmon)
+2    AvsSRainyFire
+2         Damage dealt: 23.0
+3,public BattleScenario3(Mascotmon,Mascotmon)
+3    AvsBNeutralWater
+3         Damage dealt: 32.0
+4,public BattleScenario3(Mascotmon,Mascotmon)
+4    SvsRSunnyGround
+4         Damage dealt: 79.0
+5,public BattleScenario3(Mascotmon,Mascotmon)
+5    SvsRNeutralFire
+5         Damage dealt: 96.0
+6,public BattleScenario3(Mascotmon,Mascotmon)
+6    AvsBNeutralGround
+6         Damage dealt: 20.0
+7,public BattleScenario3(Mascotmon,Mascotmon)
+7    BvsSNeutralNone
+7         Damage dealt: 0.0
+8,public BattleScenario3(Mascotmon,Mascotmon)
+8    RvsBDroughtWater
+8         Damage dealt: 1.0
+9,public BattleScenario3(Mascotmon,Mascotmon)
+9    SvsBSunnyFire
+9         Damage dealt: 44.0
+:,public BattleScenario3(Mascotmon,Mascotmon)
+:    AvsASunnyGround
+:         Damage dealt: 1.0
+;,public BattleScenario3(Mascotmon,Mascotmon)
+;    RvsASunnyNormal
+;         Damage dealt: 1.0
+<,public BattleScenario3(Mascotmon,Mascotmon)
+<    RvsADroughtGround
+<         Damage dealt: 1.0
+=,public BattleScenario3(Mascotmon,Mascotmon)
+=    BvsSNeutralGround
+=         Damage dealt: 1.0
+>,public BattleScenario3(Mascotmon,Mascotmon)
+>    BvsBNeutralGround
+>         Damage dealt: 1.0
+?,public BattleScenario3(Mascotmon,Mascotmon)
+?    SvsBDroughtGround
+?         Damage dealt: 30.0
+@,public BattleScenario3(Mascotmon,Mascotmon)
+@    BvsSNeutralGround
+@         Damage dealt: 130.0
+A,public BattleScenario3(Mascotmon,Mascotmon)
+A    SvsASunnyGround
+A         Damage dealt: 1.0
+B,public BattleScenario3(Mascotmon,Mascotmon)
+B    SvsBSunnyGround
+B         Damage dealt: 30.0
+C,public BattleScenario3(Mascotmon,Mascotmon)
+C    AvsBRAinyWater
+C         Damage dealt: 32.0
+D,public BattleScenario3(Mascotmon,Mascotmon)
+D    AvsBRainyGround
+D         Damage dealt: 20.0
+E,public BattleScenario3(Mascotmon,Mascotmon)
+E    AvsRSunnyFire
+E         Damage dealt: 8.0
+F,public BattleScenario3(Mascotmon,Mascotmon)
+F    RvsSSunnyNormal
+F         Damage dealt: 1.0
+G,public BattleScenario3(Mascotmon,Mascotmon)
+G    SvsBDroughtFire
+G         Damage dealt: 44.0
+H,public BattleScenario3(Mascotmon,Mascotmon)
+H    SvsRNeutralGround
+H         Damage dealt: 79.0
+I,public BattleScenario4(Mascotmon,Mascotmon)
+I    AvsSRainyFire
+I         Damage dealt: 26.0
+J,public BattleScenario4(Mascotmon,Mascotmon)
+J    AvsBNeutralWater
+J         Damage dealt: 32.0
+K,public BattleScenario4(Mascotmon,Mascotmon)
+K    SvsRSunnyGround
+K         Damage dealt: 39.0
+L,public BattleScenario4(Mascotmon,Mascotmon)
+L    SvsRNeutralFire
+L         Damage dealt: 56.0
+M,public BattleScenario4(Mascotmon,Mascotmon)
+M    AvsBNeutralGround
+M         Damage dealt: 20.0
+N,public BattleScenario4(Mascotmon,Mascotmon)
+N    BvsSNeutralNone
+N         Damage dealt: 0.0
+O,public BattleScenario4(Mascotmon,Mascotmon)
+O    RvsBDroughtWater
+OWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+O         Damage dealt: 1.0
+P,public BattleScenario4(Mascotmon,Mascotmon)
+P    SvsBSunnyFire
+P         Damage dealt: 44.0
+Q,public BattleScenario4(Mascotmon,Mascotmon)
+Q    AvsASunnyGround
+QWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+Q         Damage dealt: 1.0
+R,public BattleScenario4(Mascotmon,Mascotmon)
+R    RvsASunnyNormal
+RWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+R         Damage dealt: 1.0
+S,public BattleScenario4(Mascotmon,Mascotmon)
+S    RvsADroughtGround
+S,Easter egg 4 (you found one error): w9WgXcQ
+SWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+S         Damage dealt: 1.0
+T,public BattleScenario4(Mascotmon,Mascotmon)
+T    BvsSNeutralGround
+TWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+T         Damage dealt: 1.0
+U,public BattleScenario4(Mascotmon,Mascotmon)
+U    BvsBNeutralGround
+UWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+U         Damage dealt: 1.0
+V,public BattleScenario4(Mascotmon,Mascotmon)
+V    SvsBDroughtGround
+V         Damage dealt: 13.0
+W,public BattleScenario4(Mascotmon,Mascotmon)
+W    BvsSNeutralGround
+W         Damage dealt: 160.0
+X,public BattleScenario4(Mascotmon,Mascotmon)
+X    SvsASunnyGround
+XWEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+X         Damage dealt: 1.0
+Y,public BattleScenario4(Mascotmon,Mascotmon)
+Y    SvsBSunnyGround
+Y         Damage dealt: 30.0
+Z,public BattleScenario4(Mascotmon,Mascotmon)
+Z    AvsBRAinyWater
+Z         Damage dealt: 32.0
+[,public BattleScenario4(Mascotmon,Mascotmon)
+[    AvsBRainyGround
+[         Damage dealt: 20.0
+\,public BattleScenario4(Mascotmon,Mascotmon)
+\    AvsRSunnyFire
+\WEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+\         Damage dealt: 1.0
+],public BattleScenario4(Mascotmon,Mascotmon)
+]    RvsSSunnyNormal
+]WEaster egg 5 (you found one error): Only one more to go, eat a cookie for strenght :-)
+]         Damage dealt: 1.0
+^,public BattleScenario4(Mascotmon,Mascotmon)
+^    SvsBDroughtFire
+^         Damage dealt: 23.0
+_,public BattleScenario4(Mascotmon,Mascotmon)
+_    SvsRNeutralGround
+_         Damage dealt: 39.0
+`,public BattleScenario5(Mascotmon,Mascotmon)
+`    AvsSRainyFire
+`         Damage dealt: 64.0
+a,public BattleScenario5(Mascotmon,Mascotmon)
+a    AvsBNeutralWater
+a         Damage dealt: 32.0
+b,public BattleScenario5(Mascotmon,Mascotmon)
+b    SvsRSunnyGround
+b         Damage dealt: 61.0
+c,public BattleScenario5(Mascotmon,Mascotmon)
+c    SvsRNeutralFire
+c         Damage dealt: 56.0
+d,public BattleScenario5(Mascotmon,Mascotmon)
+d    AvsBNeutralGround
+d         Damage dealt: 20.0
+e,public BattleScenario5(Mascotmon,Mascotmon)
+e    BvsSNeutralNone
+e         Damage dealt: 0.0
+f,public BattleScenario5(Mascotmon,Mascotmon)
+f    RvsBDroughtWater
+f         Damage dealt: 1.0
+g,public BattleScenario5(Mascotmon,Mascotmon)
+g    SvsBSunnyFire
+g         Damage dealt: 65.0
+h,public BattleScenario5(Mascotmon,Mascotmon)
+h    AvsASunnyGround
+h         Damage dealt: 15.0
+i,public BattleScenario5(Mascotmon,Mascotmon)
+i    RvsASunnyNormal
+i         Damage dealt: 8.0
+j,public BattleScenario5(Mascotmon,Mascotmon)
+j    RvsADroughtGround
+j         Damage dealt: 26.0
+k,public BattleScenario5(Mascotmon,Mascotmon)
+k    BvsSNeutralGround
+k         Damage dealt: 1.0
+l,public BattleScenario5(Mascotmon,Mascotmon)
+l    BvsBNeutralGround
+l         Damage dealt: 1.0
+m,public BattleScenario5(Mascotmon,Mascotmon)
+m    SvsBDroughtGround
+m         Damage dealt: 30.0
+n,public BattleScenario5(Mascotmon,Mascotmon)
+n    BvsSNeutralGround
+n         Damage dealt: 160.0
+o,public BattleScenario5(Mascotmon,Mascotmon)
+o    SvsASunnyGround
+o         Damage dealt: 16.0
+p,public BattleScenario5(Mascotmon,Mascotmon)
+p    SvsBSunnyGround
+p         Damage dealt: 48.0
+q,public BattleScenario5(Mascotmon,Mascotmon)
+q    AvsBRAinyWater
+q         Damage dealt: 50.0
+r,public BattleScenario5(Mascotmon,Mascotmon)
+r    AvsBRainyGround
+r         Damage dealt: 35.0
+s,public BattleScenario5(Mascotmon,Mascotmon)
+s    AvsRSunnyFire
+s         Damage dealt: 1.0
+t,public BattleScenario5(Mascotmon,Mascotmon)
+t    RvsSSunnyNormal
+t         Damage dealt: 1.0
+u,public BattleScenario5(Mascotmon,Mascotmon)
+u    SvsBDroughtFire
+u         Damage dealt: 44.0
+v,public BattleScenario5(Mascotmon,Mascotmon)
+v    SvsRNeutralGround
+v         Damage dealt: 39.0
