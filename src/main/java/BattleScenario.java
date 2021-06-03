@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class BattleScenario {
 
     Mascotmon mon1;
@@ -133,7 +135,28 @@ public class BattleScenario {
       * @return total damage output
       */
     public double calculateDamage(Attack pAttack, Mascotmon pAttacker, Mascotmon pDefender) {
-        return Math.round(pAttack.damage * 0.2);
+        double skirmish;
+        double attackBonus = 1;
+        //set type bonus for both monsters
+        pAttacker.setTypeBonuses(pDefender);
+        //set weather bonus for both monsters
+        pAttacker.setWeatherBonus(battleWeather);
+        pDefender.setWeatherBonus(battleWeather);
+        //set attack bonus
+        if (pAttacker.type.compareTo(pAttack.type) == 0){
+            attackBonus = Constants.ATTACK_BONUS;
+        }
+        //check for "None" attack
+        if (pAttack.type.compareTo("None") == 0){
+            return Constants.NONE_ATTACK;
+        }
+        //calculate and return the damage
+        skirmish = Math.round(pAttack.damage * attackBonus * pAttacker.typeBonus * pAttacker.weatherBonus - pDefender.stats.defense *
+                pDefender.typeBonus * pDefender.weatherBonus);
+        if (skirmish < 0){
+            return 1.0;
+        }
+        return skirmish;
     }
 
 }

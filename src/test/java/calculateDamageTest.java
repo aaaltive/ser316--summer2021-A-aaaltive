@@ -37,7 +37,7 @@ public class calculateDamageTest {
         System.out.println("    SvsRNeutralGround");
 
         fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(70, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 70 * 1 * 1.25 * 1 - 65 * .75 *1
 
@@ -60,7 +60,7 @@ public class calculateDamageTest {
         System.out.println("    AvsBRainyGround");
 
         fight1.setEnvironment(Environment.Weather.rainy);
-        Attack attack = new Attack(60, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 60 * 1 * 1.25 * 1 - 40 * 1 * 1
 
@@ -83,7 +83,7 @@ public class calculateDamageTest {
         System.out.println("    RvsBDroughtWater");
 
         fight1.setEnvironment(Environment.Weather.drought);
-        Attack attack = new Attack(30, "Water");
+        Attack attack = new Attack(attacker1.stats.attack, "Water");
 
         //Calculation: 30 * 1 * 1.25 * 1 - 40 * .75 * 1
 
@@ -106,7 +106,7 @@ public class calculateDamageTest {
         System.out.println("    SvsRSunnyGround");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(70, "ground");
+        Attack attack = new Attack(attacker1.stats.attack, "ground");
 
         //Calculation: 70 * 1 * 1.25 * 1.25 - 65 * .75 * 1
 
@@ -129,7 +129,7 @@ public class calculateDamageTest {
         System.out.println("    RvsADroughtGround");
 
         fight1.setEnvironment(Environment.Weather.drought);
-        Attack attack = new Attack(30, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 30 * 1.2 * 1.25 * 1.25 - 40 * .75 * 1
 
@@ -153,7 +153,7 @@ public class calculateDamageTest {
         System.out.println("    AvsSRainyFire");
 
         fight1.setEnvironment(Environment.Weather.rainy);
-        Attack attack = new Attack(60, "Fire");
+        Attack attack = new Attack(attacker1.stats.attack, "Fire");
 
         //Calculation: 60 * 1 * 1.25 * 1.25 - 40 * .75 * .75
 
@@ -176,7 +176,7 @@ public class calculateDamageTest {
         System.out.println("    AvsBNeutralWater");
 
         fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(60, "Water");
+        Attack attack = new Attack(attacker1.stats.attack, "Water");
 
         //Calculation: 60 * 1.2 * 1 * 1 - 40 * 1 * 1
 
@@ -199,7 +199,7 @@ public class calculateDamageTest {
         System.out.println("    SvsRNeutralFire");
 
         fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(70, "Fire");
+        Attack attack = new Attack(attacker1.stats.attack, "Fire");
 
         //Calculation: 70 * 1.2 * 1.25 * 1 - 65 * .75 * 1
 
@@ -222,7 +222,7 @@ public class calculateDamageTest {
         System.out.println("    SvsBSunnyFire");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(70, "Fire");
+        Attack attack = new Attack(attacker1.stats.attack, "Fire");
 
         //Calculation: 70 * 1.2 * 1.25 * 1 - 40 * 1 * 1
 
@@ -245,7 +245,7 @@ public class calculateDamageTest {
         System.out.println("    AvsBNeutralGround");
 
         fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(60, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 60 * 1 * 1 * 1 - 40 * 1 *1
 
@@ -268,7 +268,7 @@ public class calculateDamageTest {
         System.out.println("    SvsBSunnyGround");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(70, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 70 * 1 * 1.25 * 1 - 40 * 1 * 1
 
@@ -291,7 +291,7 @@ public class calculateDamageTest {
         System.out.println("    SvsBDroughtGround");
 
         fight1.setEnvironment(Environment.Weather.drought);
-        Attack attack = new Attack(70, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 70 * 1 * 1 * 1 - 40 * .75 * 1
 
@@ -314,36 +314,13 @@ public class calculateDamageTest {
         System.out.println("    AvsBRAinyWater");
 
         fight1.setEnvironment(Environment.Weather.rainy);
-        Attack attack = new Attack(60, "Water");
+        Attack attack = new Attack(attacker1.stats.attack, "Water");
 
-        //Calculation: 60 * 1.2 * 1.25 * 1 - 40 * 1 *1
+        //Calculation: 60 * 1 * .75 * 1 - 40 * 1 *1
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(50, damage, 0.2);
-    }
-
-    /**
-     * Bully (40) v Sparky (40) in sunny with no attack (EC14)
-     * @throws Exception
-     */
-    @Test
-    public void BvsSNeutralNone() throws Exception {
-
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
-
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1);
-        System.out.println("    BvsSNeutralNone");
-
-        fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(0, "None");
-
-        //Calculation: 0 * 1 * 1 * 1 - 40 * 1 * 1
-
-        double damage = fight1.calculateDamage(attack, attacker1, defender1);
-        System.out.println("         Damage dealt: " + damage);
-        assertEquals(0, damage, 0.2);
     }
 
     /**
@@ -360,7 +337,7 @@ public class calculateDamageTest {
         System.out.println("    AvsRSunnyFire");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(60, "Fire");
+        Attack attack = new Attack(attacker1.stats.attack, "Fire");
 
         //Calculation: 60 * 1 * .75 * .75 - 65 * 1.25 *1
 
@@ -383,7 +360,7 @@ public class calculateDamageTest {
         System.out.println("    RvsASunnyNormal");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(30, "Normal");
+        Attack attack = new Attack(attacker1.stats.attack, "Normal");
 
         //Calculation: 30 * 1 * 1.25 * 1 - 40 * .75 * .75
 
@@ -406,7 +383,7 @@ public class calculateDamageTest {
         System.out.println("    RvsSSunnyNormal");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(30, "Normal");
+        Attack attack = new Attack(attacker1.stats.attack, "Normal");
 
         //Calculation: 30 * 1 * .75 * 1 - 40 * 1.25 * 1.25
 
@@ -429,7 +406,7 @@ public class calculateDamageTest {
         System.out.println("    SvsBDroughtFire");
 
         fight1.setEnvironment(Environment.Weather.drought);
-        Attack attack = new Attack(70, "Fire");
+        Attack attack = new Attack(attacker1.stats.attack, "Fire");
 
         //Calculation: 70 * 1.2 * 1 * 1 - 40 * .75 * 1
 
@@ -452,13 +429,13 @@ public class calculateDamageTest {
         System.out.println("    SvsASunnyGround");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(70, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 70 * 1 * 1.25 * .75 - 40 * .75 * 1.25
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
-        assertEquals(29, damage, 0.2);
+        assertEquals(28, damage, 0.2);
     }
 
     /**
@@ -521,7 +498,7 @@ public class calculateDamageTest {
         System.out.println("    AvsASunnyGround");
 
         fight1.setEnvironment(Environment.Weather.sunny);
-        Attack attack = new Attack(60, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 60 * 1 * .75 * 1 - 40 * .75 * 1
 
@@ -544,7 +521,7 @@ public class calculateDamageTest {
         System.out.println("    BvsBNeutralGround");
 
         fight1.setEnvironment(Environment.Weather.neutral);
-        Attack attack = new Attack(40, "Ground");
+        Attack attack = new Attack(attacker1.stats.attack, "Ground");
 
         //Calculation: 40 * 1 * 1 * 1 - 40 * 1 * 1
 
@@ -552,6 +529,30 @@ public class calculateDamageTest {
         System.out.println("         Damage dealt: " + damage);
         assertEquals(0, damage, 0.2);
     }
+
+    /**
+     * Bully (40) v Sparky (40) in sunny with no attack (EC14)
+     * @throws Exception
+     */
+    @Test
+    public void BvsSNeutralNone() throws Exception {
+
+        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+
+        BattleScenario fight1 = createBattleScenario(attacker1, defender1);
+        System.out.println("    BvsSNeutralNone");
+
+        fight1.setEnvironment(Environment.Weather.neutral);
+        Attack attack = new Attack(0, "None");
+
+        //Calculation: 0 * 1 * 1 * 1 - 40 * 1 * 1
+
+        double damage = fight1.calculateDamage(attack, attacker1, defender1);
+        System.out.println("         Damage dealt: " + damage);
+        assertEquals(0, damage, 0.2);
+    }
+
 
 }
 

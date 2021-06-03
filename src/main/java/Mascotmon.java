@@ -145,6 +145,50 @@ public class Mascotmon {
         return attack;
     }
 
+    public void setWeatherBonus(Environment weather) {
+        if (this.type.compareTo(weather.buffedType)==0){
+            this.weatherBonus = Constants.BONUS;
+        }
+        else if (this.type.compareTo(weather.debuffedType)==0){
+            this.weatherBonus = Constants.DEBUFF;
+        }
+    }
+
+    public void setTypeBonuses(Mascotmon m) {
+        switch (this.type){
+            case "Fire":
+                if (m.type.compareTo("Water") == 0){
+                    this.typeBonus = Constants.DEBUFF;
+                    m.typeBonus = Constants.BONUS;
+                }
+                else if (m.type.compareTo("Ground") == 0){
+                    this.typeBonus = Constants.BONUS;
+                    m.typeBonus = Constants.DEBUFF;
+                }
+                break;
+            case "Water":
+                if (m.type.compareTo("Ground") == 0){
+                    this.typeBonus = Constants.DEBUFF;
+                    m.typeBonus = Constants.BONUS;
+                }
+                else if (m.type.compareTo("Fire") == 0){
+                    this.typeBonus = Constants.BONUS;
+                    m.typeBonus = Constants.DEBUFF;
+                }
+                break;
+            case "Ground":
+                if (m.type.compareTo("Fire") == 0){
+                    this.typeBonus = Constants.DEBUFF;
+                    m.typeBonus = Constants.BONUS;
+                }
+                else if (m.type.compareTo("Water") == 0){
+                    this.typeBonus = Constants.BONUS;
+                    m.typeBonus = Constants.DEBUFF;
+                }
+                break;
+        }
+    }
+
     public enum Name {
         ALBERT, RALPHIE, SPARKY, BULLY
     }

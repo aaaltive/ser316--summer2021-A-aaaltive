@@ -2,7 +2,7 @@ public class Environment {
 
     Weather WEATHER;
     String buffedType;
-    String DebuffedType;
+    String debuffedType;
     double buffModifier;
     double debuffModifier;
 
@@ -17,19 +17,19 @@ public class Environment {
         switch (weather){
             case sunny:
                this.buffedType = "Fire";
-               this.DebuffedType = "Water";
+               this.debuffedType = "Water";
                break;
             case rainy:
                 this.buffedType = "Water";
-                this.DebuffedType = "Fire";
+                this.debuffedType = "Fire";
                 break;
             case drought:
                 this.buffedType = "Ground";
-                this.DebuffedType = "Normal";
+                this.debuffedType = "Normal";
                 break;
             default:
                 this.buffedType = "";
-                this.DebuffedType = "";
+                this.debuffedType = "";
                 break;
         }
     }
@@ -39,7 +39,7 @@ public class Environment {
     }
 
     public String getDebuffedType(){
-        return DebuffedType;
+        return debuffedType;
     }
 
     public enum Weather {
