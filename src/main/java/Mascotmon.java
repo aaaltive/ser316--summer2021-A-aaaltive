@@ -145,6 +145,50 @@ public class Mascotmon {
         return attack;
     }
 
+    public void setWeatherBonus(Environment weather) {
+        if (this.type.compareTo(weather.getBuffedType())==0){
+            this.weatherBonus = 1.25;
+        }
+        else if (this.type.compareTo(weather.getDebuffedType())==0){
+            this.weatherBonus = .75;
+        }
+    }
+
+    public void setTypeBonuses(Mascotmon m) {
+        switch (this.type){
+            case "Fire":
+                if (m.type.compareTo("Water") == 0){
+                    this.typeBonus = .75;
+                    m.typeBonus = 1.25;
+                }
+                else if (m.type.compareTo("Ground") == 0){
+                    this.typeBonus = 1.25;
+                    m.typeBonus = .75;
+                }
+                break;
+            case "Water":
+                if (m.type.compareTo("Ground") == 0){
+                    this.typeBonus = .75;
+                    m.typeBonus = 1.25;
+                }
+                else if (m.type.compareTo("Fire") == 0){
+                    this.typeBonus = 1.25;
+                    m.typeBonus = .75;
+                }
+                break;
+            case "Ground":
+                if (m.type.compareTo("Fire") == 0){
+                    this.typeBonus = .75;
+                    m.typeBonus = 1.25;
+                }
+                else if (m.type.compareTo("Water") == 0){
+                    this.typeBonus = 1.25;
+                    m.typeBonus = .75;
+                }
+                break;
+        }
+    }
+    
     public Name getName() {
         return name;
     }
