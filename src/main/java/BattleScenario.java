@@ -23,8 +23,8 @@ public class BattleScenario {
     public void setEnvironment(Environment.Weather pWeather) {
         battleWeather = new Environment(pWeather);
     }
-
-    public void initiateBattle() {
+    //changed initiateBattle() from void, so that it will return a Mascotmon object so that I can test this method as well
+    public Mascotmon initiateBattle() {
 
         // initiate stats for mon1 and mon2
         mon1Stats = new Stats(mon1.name);
@@ -42,6 +42,7 @@ public class BattleScenario {
 
         Mascotmon winner = fight();
         System.out.println(winner.name + " has won with " + winner.stats.health + " health left");
+        return winner; //I added a return statement
     }
 
     /**
@@ -60,7 +61,9 @@ public class BattleScenario {
         while (true) {
             //Mon 1's turn:
             System.out.println("\n" + mon1.name + " launches an attack against " + mon2.name + "!");
-            attack1 = mon1.attack();
+            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
+            // deterministic for testing
+            attack1 = new Attack(130.0, "Ground");
 
             //Calculate damage:
             damage1 = calculateDamage(attack1, mon1, mon2);
@@ -78,7 +81,9 @@ public class BattleScenario {
 
             //Mon 2's turn:
             System.out.println("\n" + mon2.name  + " launches an attack against " + mon1.name + "!");
-            attack2 = mon2.attack();
+            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
+            // deterministic for testing
+            attack2 = new Attack(130.0, "Ground");
 
             //Calculate damage:
             damage2 = calculateDamage(attack2, mon2, mon1);

@@ -1,4 +1,4 @@
+calculateDamageTest.java
+ calculateDamageTest
 GivenWhiteBox.java
  GivenWhiteBox
-GivenBlackBox.java
- GivenBlackBox
