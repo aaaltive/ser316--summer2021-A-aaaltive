@@ -16,7 +16,7 @@
 |6|class Mascotmon; line78, 82, 85...|literals used rather than constants|CG6|LOW|
 |7|class Attack|this class doesn't really do anything except construct an Attack object|CS5|LOW|
 |8|class Mascotmon constructor and Class Description|pointless to have this as it's own class and used only and every time the constructor is called in Mascotmon, this should be thier home|CS4|LOW|
-|9|class Mascotmon|no getter or setter for weatherBonus or typeBonus|FD|BR|
+|9|class Mascotmon|no setter for weatherBonus or typeBonus|FD|BR|
 
 ## Category:	
  - CS – Code Smell defect. 

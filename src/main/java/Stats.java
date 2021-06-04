@@ -1,8 +1,8 @@
 public class Stats {
 
-    double attack;
-    double defense;
-    double health;
+    private double attack;
+    private double defense;
+    private double health;
 
     public Stats() {
         attack = 50;
@@ -34,5 +34,29 @@ public class Stats {
                 break;
         }
 
+    }
+
+    public double getAttack() {
+        return attack;
+    }
+
+    public void setAttack(double attack) {
+        this.attack = attack;
+    }
+
+    public double getDefense() {
+        return defense;
+    }
+
+    public void setDefense(double defense) {
+        this.defense = defense;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
     }
 }

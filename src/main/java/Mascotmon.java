@@ -1,13 +1,13 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Mascotmon {
-    String description;
-    public String type;
-    public Name name;
-    public Stats stats;
-    public double weatherBonus = 1.0; 
-    public double typeBonus = 1.0;
-    public int buf_counter = 0;
+    private String description;
+    private String type;
+    private Name name;
+    private Stats stats;
+    private double weatherBonus = 1.0;
+    private double typeBonus = 1.0;
+    private int buf_counter = 0;
 
     public Mascotmon() {
         int rand = ThreadLocalRandom.current().nextInt(0, 4);
@@ -21,31 +21,31 @@ public class Mascotmon {
             name = Name.BULLY;
         }
         getType();
-        getStats();
-        getDescription();
+        setStats();
+        setDescription();
     }
 
     public Mascotmon(Name name) {
         this.name = name;
         getType();
-        getStats();
-        getDescription();
+        setStats();
+        setDescription();
     }
 
     private void getType() {
         type t = new type(name);
-        this.type = t.type;
+        this.type = t.getType();
     }
 
-    private void getStats() {
+    private void setStats() {
         stats = new Stats(name);
         
         
     }
 
-    private void getDescription() {
+    private void setDescription() {
         Description desc = new Description(name);
-        this.description = desc.description;
+        this.description = desc.getDescription();
     }
 
     /**
@@ -77,72 +77,84 @@ public class Mascotmon {
             case ALBERT:
                 if (attackNumber == 0) {
                     _desc = " uses Iron Scales, increasing defense stat by 10%";
-                    stats.defense *= 1.10;
+                    stats.setDefense(stats.getDefense() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     _desc = " uses Death Roll";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 } else if (attackNumber == 2) {
                     _desc = " uses Chomp";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else {
                     _desc = " uses Aqua Cannon";
-                    attack = new Attack(stats.attack, "Water");
+                    attack = new Attack(stats.getAttack(), "Water");
                 }
                 break;
             case RALPHIE:
                 if (attackNumber == 0) {
                     _desc = " uses Iron Hide, increasing defense stat by 10%";
-                    stats.defense *= 1.10;
+                    stats.setDefense(stats.getDefense() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     _desc = " uses Ground Stomp";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 } else if (attackNumber == 2) {
                     _desc = " uses Headbutt";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else {
                     _desc = " uses Flaming Horn";
-                    attack = new Attack(stats.attack, "Fire");
+                    attack = new Attack(stats.getAttack(), "Fire");
                 }
                 break;
             case SPARKY:
                 if (attackNumber == 0) {
                     _desc = " uses Heat Up, increasing attack stat by 10%";
-                    stats.attack *= 1.10;
+                    stats.setAttack(stats.getAttack() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     _desc = " uses Inferno";
-                    attack = new Attack(stats.attack, "Fire");
+                    attack = new Attack(stats.getAttack(), "Fire");
                 } else if (attackNumber == 2) {
                     _desc = " uses Quick Attack";
-                    attack = new Attack(stats.attack, "Normal");
-                    System.out.println("Attack value: " + stats.attack);
+                    attack = new Attack(stats.getAttack(), "Normal");
+                    System.out.println("Attack value: " + stats.getAttack());
                 } else {
                     _desc = " uses Earthquake";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 }
                 break;
             case BULLY:
                 if (attackNumber == 0) {
                     _desc = " uses Sleep, increasing health stat by 10%";
-                    double health = stats.health * 1.10;
-                    stats.health = Math.round(health);
+                    double health = stats.getHealth() * 1.10;
+                    stats.setHealth(Math.round(health));
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     _desc = " uses Body Slam";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else if (attackNumber == 2) {
                     _desc = " uses Splash";
-                    attack = new Attack(stats.attack, "Water");
+                    attack = new Attack(stats.getAttack(), "Water");
                 } else {
                     _desc = " uses Ground Pound";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 }
         }
             
         System.out.println(name.toString().toLowerCase() + _desc);
         return attack;
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public enum Name {

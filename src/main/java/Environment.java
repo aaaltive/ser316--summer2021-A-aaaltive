@@ -1,10 +1,10 @@
 public class Environment {
 
-    Weather WEATHER;
-    String buffedType;
-    String DebuffedType;
-    double buffModifier;
-    double debuffModifier;
+    private Weather WEATHER;
+    private String buffedType;
+    private String DebuffedType;
+    private double buffModifier;
+    private double debuffModifier;
 
     public Environment(){
         this(Weather.neutral);
@@ -34,12 +34,24 @@ public class Environment {
         }
     }
 
-    public String GetBuffedType(){
+    public String getBuffedType(){
         return buffedType;
     }
 
     public String getDebuffedType(){
         return DebuffedType;
+    }
+
+    public Weather getWEATHER() {
+        return WEATHER;
+    }
+
+    public double getBuffModifier() {
+        return buffModifier;
+    }
+
+    public double getDebuffModifier() {
+        return debuffModifier;
     }
 
     public enum Weather {

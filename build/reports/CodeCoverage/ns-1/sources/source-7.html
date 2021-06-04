@@ -1,0 +1,345 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Mascotmon</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Mascotmon (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Mascotmon</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    34.7%
+  </span>
+  <span class="absValue">
+    (42/121)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Mascotmon$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Mascotmon$Name</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (8/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    35.5%
+  </span>
+  <span class="absValue">
+    (44/124)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;import java.util.concurrent.ThreadLocalRandom;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;public class Mascotmon {
+<i class="no-highlight">4</i>&nbsp;    String description;
+<i class="no-highlight">5</i>&nbsp;    public String type;
+<i class="no-highlight">6</i>&nbsp;    public Name name;
+<i class="no-highlight">7</i>&nbsp;    public Stats stats;
+<b class="fc"><i class="no-highlight">8</i>&nbsp;    public double weatherBonus = 1.0; </b>
+<b class="fc"><i class="no-highlight">9</i>&nbsp;    public double typeBonus = 1.0;</b>
+<b class="fc"><i class="no-highlight">10</i>&nbsp;    public int buf_counter = 0;</b>
+<i class="no-highlight">11</i>&nbsp;
+<b class="nc"><i class="no-highlight">12</i>&nbsp;    public Mascotmon() {</b>
+<b class="nc"><i class="no-highlight">13</i>&nbsp;        int rand = ThreadLocalRandom.current().nextInt(0, 4);</b>
+<b class="nc"><i class="no-highlight">14</i>&nbsp;        if (rand == 0) {</b>
+<b class="nc"><i class="no-highlight">15</i>&nbsp;            name = Name.ALBERT;</b>
+<b class="nc"><i class="no-highlight">16</i>&nbsp;        } else if (rand == 1) {</b>
+<b class="nc"><i class="no-highlight">17</i>&nbsp;            name = Name.RALPHIE;</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        } else if (rand == 2) {</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;            name = Name.SPARKY;</b>
+<i class="no-highlight">20</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">21</i>&nbsp;            name = Name.BULLY;</b>
+<i class="no-highlight">22</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        getType();</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;        getStats();</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        getDescription();</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;    }</b>
+<i class="no-highlight">27</i>&nbsp;
+<b class="fc"><i class="no-highlight">28</i>&nbsp;    public Mascotmon(Name name) {</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        getType();</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        getStats();</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;        getDescription();</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;    }</b>
+<i class="no-highlight">34</i>&nbsp;
+<i class="no-highlight">35</i>&nbsp;    private void getType() {
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        type t = new type(name);</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        this.type = t.type;</b>
+<b class="fc"><i class="no-highlight">38</i>&nbsp;    }</b>
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;    private void getStats() {
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        stats = new Stats(name);</b>
+<i class="no-highlight">42</i>&nbsp;        
+<i class="no-highlight">43</i>&nbsp;        
+<b class="fc"><i class="no-highlight">44</i>&nbsp;    }</b>
+<i class="no-highlight">45</i>&nbsp;
+<i class="no-highlight">46</i>&nbsp;    private void getDescription() {
+<b class="fc"><i class="no-highlight">47</i>&nbsp;        Description desc = new Description(name);</b>
+<b class="fc"><i class="no-highlight">48</i>&nbsp;        this.description = desc.description;</b>
+<b class="fc"><i class="no-highlight">49</i>&nbsp;    }</b>
+<i class="no-highlight">50</i>&nbsp;
+<i class="no-highlight">51</i>&nbsp;    /**
+<i class="no-highlight">52</i>&nbsp;     * Method randomly determines an attack to use based on the defending Mascotmon and
+<i class="no-highlight">53</i>&nbsp;     * returns the base damage of the attack selected. The self-buff (attackNumber 0) can only be
+<i class="no-highlight">54</i>&nbsp;     * used 3 times during a battle.
+<i class="no-highlight">55</i>&nbsp;     * @return attack damage
+<i class="no-highlight">56</i>&nbsp;     * You can assume that this method uses the values it is supposed to use and is correct. 
+<i class="no-highlight">57</i>&nbsp;     */
+<i class="no-highlight">58</i>&nbsp;    public Attack attack() {
+<b class="nc"><i class="no-highlight">59</i>&nbsp;        double attack_Damage = 0;</b>
+<b class="nc"><i class="no-highlight">60</i>&nbsp;        int attackNumber = 0;</b>
+<i class="no-highlight">61</i>&nbsp;
+<i class="no-highlight">62</i>&nbsp;        while (true) {
+<b class="nc"><i class="no-highlight">63</i>&nbsp;            attackNumber = ThreadLocalRandom.current().nextInt(0, 4);</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;            if (attackNumber == 0 &amp;&amp; buf_counter &lt;= 2) {</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                buf_counter++;</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                break;</b>
+<i class="no-highlight">67</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">68</i>&nbsp;            else if (attackNumber != 0){</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                break;</b>
+<i class="no-highlight">70</i>&nbsp;            }
+<i class="no-highlight">71</i>&nbsp;        }
+<i class="no-highlight">72</i>&nbsp;
+<b class="nc"><i class="no-highlight">73</i>&nbsp;        String _desc= &quot;&quot;;</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;        Attack attack = null;</b>
+<i class="no-highlight">75</i>&nbsp;
+<b class="nc"><i class="no-highlight">76</i>&nbsp;        switch (name) {</b>
+<i class="no-highlight">77</i>&nbsp;            case ALBERT:
+<b class="nc"><i class="no-highlight">78</i>&nbsp;                if (attackNumber == 0) {</b>
+<b class="nc"><i class="no-highlight">79</i>&nbsp;                    _desc = &quot; uses Iron Scales, increasing defense stat by 10%&quot;;</b>
+<b class="nc"><i class="no-highlight">80</i>&nbsp;                    stats.defense *= 1.10;</b>
+<b class="nc"><i class="no-highlight">81</i>&nbsp;                    attack = new Attack(0, &quot;None&quot;);</b>
+<b class="nc"><i class="no-highlight">82</i>&nbsp;                } else if (attackNumber == 1) {</b>
+<b class="nc"><i class="no-highlight">83</i>&nbsp;                    _desc = &quot; uses Death Roll&quot;;</b>
+<b class="nc"><i class="no-highlight">84</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Ground&quot;);</b>
+<b class="nc"><i class="no-highlight">85</i>&nbsp;                } else if (attackNumber == 2) {</b>
+<b class="nc"><i class="no-highlight">86</i>&nbsp;                    _desc = &quot; uses Chomp&quot;;</b>
+<b class="nc"><i class="no-highlight">87</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Normal&quot;);</b>
+<i class="no-highlight">88</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">89</i>&nbsp;                    _desc = &quot; uses Aqua Cannon&quot;;</b>
+<b class="nc"><i class="no-highlight">90</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Water&quot;);</b>
+<i class="no-highlight">91</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">92</i>&nbsp;                break;</b>
+<i class="no-highlight">93</i>&nbsp;            case RALPHIE:
+<b class="nc"><i class="no-highlight">94</i>&nbsp;                if (attackNumber == 0) {</b>
+<b class="nc"><i class="no-highlight">95</i>&nbsp;                    _desc = &quot; uses Iron Hide, increasing defense stat by 10%&quot;;</b>
+<b class="nc"><i class="no-highlight">96</i>&nbsp;                    stats.defense *= 1.10;</b>
+<b class="nc"><i class="no-highlight">97</i>&nbsp;                    attack = new Attack(0, &quot;None&quot;);</b>
+<b class="nc"><i class="no-highlight">98</i>&nbsp;                } else if (attackNumber == 1) {</b>
+<b class="nc"><i class="no-highlight">99</i>&nbsp;                    _desc = &quot; uses Ground Stomp&quot;;</b>
+<b class="nc"><i class="no-highlight">100</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Ground&quot;);</b>
+<b class="nc"><i class="no-highlight">101</i>&nbsp;                } else if (attackNumber == 2) {</b>
+<b class="nc"><i class="no-highlight">102</i>&nbsp;                    _desc = &quot; uses Headbutt&quot;;</b>
+<b class="nc"><i class="no-highlight">103</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Normal&quot;);</b>
+<i class="no-highlight">104</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">105</i>&nbsp;                    _desc = &quot; uses Flaming Horn&quot;;</b>
+<b class="nc"><i class="no-highlight">106</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Fire&quot;);</b>
+<i class="no-highlight">107</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">108</i>&nbsp;                break;</b>
+<i class="no-highlight">109</i>&nbsp;            case SPARKY:
+<b class="nc"><i class="no-highlight">110</i>&nbsp;                if (attackNumber == 0) {</b>
+<b class="nc"><i class="no-highlight">111</i>&nbsp;                    _desc = &quot; uses Heat Up, increasing attack stat by 10%&quot;;</b>
+<b class="nc"><i class="no-highlight">112</i>&nbsp;                    stats.attack *= 1.10;</b>
+<b class="nc"><i class="no-highlight">113</i>&nbsp;                    attack = new Attack(0, &quot;None&quot;);</b>
+<b class="nc"><i class="no-highlight">114</i>&nbsp;                } else if (attackNumber == 1) {</b>
+<b class="nc"><i class="no-highlight">115</i>&nbsp;                    _desc = &quot; uses Inferno&quot;;</b>
+<b class="nc"><i class="no-highlight">116</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Fire&quot;);</b>
+<b class="nc"><i class="no-highlight">117</i>&nbsp;                } else if (attackNumber == 2) {</b>
+<b class="nc"><i class="no-highlight">118</i>&nbsp;                    _desc = &quot; uses Quick Attack&quot;;</b>
+<b class="nc"><i class="no-highlight">119</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Normal&quot;);</b>
+<b class="nc"><i class="no-highlight">120</i>&nbsp;                    System.out.println(&quot;Attack value: &quot; + stats.attack);</b>
+<i class="no-highlight">121</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">122</i>&nbsp;                    _desc = &quot; uses Earthquake&quot;;</b>
+<b class="nc"><i class="no-highlight">123</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Ground&quot;);</b>
+<i class="no-highlight">124</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">125</i>&nbsp;                break;</b>
+<i class="no-highlight">126</i>&nbsp;            case BULLY:
+<b class="nc"><i class="no-highlight">127</i>&nbsp;                if (attackNumber == 0) {</b>
+<b class="nc"><i class="no-highlight">128</i>&nbsp;                    _desc = &quot; uses Sleep, increasing health stat by 10%&quot;;</b>
+<b class="nc"><i class="no-highlight">129</i>&nbsp;                    double health = stats.health * 1.10;</b>
+<b class="nc"><i class="no-highlight">130</i>&nbsp;                    stats.health = Math.round(health);</b>
+<b class="nc"><i class="no-highlight">131</i>&nbsp;                    attack = new Attack(0, &quot;None&quot;);</b>
+<b class="nc"><i class="no-highlight">132</i>&nbsp;                } else if (attackNumber == 1) {</b>
+<b class="nc"><i class="no-highlight">133</i>&nbsp;                    _desc = &quot; uses Body Slam&quot;;</b>
+<b class="nc"><i class="no-highlight">134</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Normal&quot;);</b>
+<b class="nc"><i class="no-highlight">135</i>&nbsp;                } else if (attackNumber == 2) {</b>
+<b class="nc"><i class="no-highlight">136</i>&nbsp;                    _desc = &quot; uses Splash&quot;;</b>
+<b class="nc"><i class="no-highlight">137</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Water&quot;);</b>
+<i class="no-highlight">138</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">139</i>&nbsp;                    _desc = &quot; uses Ground Pound&quot;;</b>
+<b class="nc"><i class="no-highlight">140</i>&nbsp;                    attack = new Attack(stats.attack, &quot;Ground&quot;);</b>
+<i class="no-highlight">141</i>&nbsp;                }
+<i class="no-highlight">142</i>&nbsp;        }
+<i class="no-highlight">143</i>&nbsp;            
+<b class="nc"><i class="no-highlight">144</i>&nbsp;        System.out.println(name.toString().toLowerCase() + _desc);</b>
+<b class="nc"><i class="no-highlight">145</i>&nbsp;        return attack;</b>
+<i class="no-highlight">146</i>&nbsp;    }
+<i class="no-highlight">147</i>&nbsp;
+<i class="no-highlight">148</i>&nbsp;    public void setWeatherBonus(Environment weather) {
+<b class="fc"><i class="no-highlight">149</i>&nbsp;        if (this.type.compareTo(weather.buffedType)==0){</b>
+<b class="fc"><i class="no-highlight">150</i>&nbsp;            this.weatherBonus = Constants.BONUS;</b>
+<i class="no-highlight">151</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">152</i>&nbsp;        else if (this.type.compareTo(weather.debuffedType)==0){</b>
+<b class="fc"><i class="no-highlight">153</i>&nbsp;            this.weatherBonus = Constants.DEBUFF;</b>
+<i class="no-highlight">154</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">155</i>&nbsp;    }</b>
+<i class="no-highlight">156</i>&nbsp;
+<i class="no-highlight">157</i>&nbsp;    public void setTypeBonuses(Mascotmon m) {
+<b class="fc"><i class="no-highlight">158</i>&nbsp;        switch (this.type){</b>
+<i class="no-highlight">159</i>&nbsp;            case &quot;Fire&quot;:
+<b class="fc"><i class="no-highlight">160</i>&nbsp;                if (m.type.compareTo(&quot;Water&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">161</i>&nbsp;                    this.typeBonus = Constants.DEBUFF;</b>
+<b class="fc"><i class="no-highlight">162</i>&nbsp;                    m.typeBonus = Constants.BONUS;</b>
+<i class="no-highlight">163</i>&nbsp;                }
+<b class="fc"><i class="no-highlight">164</i>&nbsp;                else if (m.type.compareTo(&quot;Ground&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">165</i>&nbsp;                    this.typeBonus = Constants.BONUS;</b>
+<b class="fc"><i class="no-highlight">166</i>&nbsp;                    m.typeBonus = Constants.DEBUFF;</b>
+<i class="no-highlight">167</i>&nbsp;                }
+<i class="no-highlight">168</i>&nbsp;                break;
+<i class="no-highlight">169</i>&nbsp;            case &quot;Water&quot;:
+<b class="fc"><i class="no-highlight">170</i>&nbsp;                if (m.type.compareTo(&quot;Ground&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">171</i>&nbsp;                    this.typeBonus = Constants.DEBUFF;</b>
+<b class="fc"><i class="no-highlight">172</i>&nbsp;                    m.typeBonus = Constants.BONUS;</b>
+<i class="no-highlight">173</i>&nbsp;                }
+<b class="fc"><i class="no-highlight">174</i>&nbsp;                else if (m.type.compareTo(&quot;Fire&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">175</i>&nbsp;                    this.typeBonus = Constants.BONUS;</b>
+<b class="fc"><i class="no-highlight">176</i>&nbsp;                    m.typeBonus = Constants.DEBUFF;</b>
+<i class="no-highlight">177</i>&nbsp;                }
+<i class="no-highlight">178</i>&nbsp;                break;
+<i class="no-highlight">179</i>&nbsp;            case &quot;Ground&quot;:
+<b class="fc"><i class="no-highlight">180</i>&nbsp;                if (m.type.compareTo(&quot;Fire&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">181</i>&nbsp;                    this.typeBonus = Constants.DEBUFF;</b>
+<b class="fc"><i class="no-highlight">182</i>&nbsp;                    m.typeBonus = Constants.BONUS;</b>
+<i class="no-highlight">183</i>&nbsp;                }
+<b class="fc"><i class="no-highlight">184</i>&nbsp;                else if (m.type.compareTo(&quot;Water&quot;) == 0){</b>
+<b class="fc"><i class="no-highlight">185</i>&nbsp;                    this.typeBonus = Constants.BONUS;</b>
+<b class="fc"><i class="no-highlight">186</i>&nbsp;                    m.typeBonus = Constants.DEBUFF;</b>
+<i class="no-highlight">187</i>&nbsp;                }
+<i class="no-highlight">188</i>&nbsp;                break;
+<i class="no-highlight">189</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">190</i>&nbsp;    }</b>
+<i class="no-highlight">191</i>&nbsp;
+<b class="fc"><i class="no-highlight">192</i>&nbsp;    public enum Name {</b>
+<b class="fc"><i class="no-highlight">193</i>&nbsp;        ALBERT, RALPHIE, SPARKY, BULLY</b>
+<i class="no-highlight">194</i>&nbsp;    }
+<i class="no-highlight">195</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-03 20:31</div>
+</div>
+</body>
+</html>
