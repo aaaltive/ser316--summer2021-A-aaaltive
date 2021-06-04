@@ -2,7 +2,7 @@
 
     Weather WEATHER;
     String buffedType;
-    String DebuffedType;
+    String debuffedType;
     double buffModifier;
     double debuffModifier;
 
@@ -17,29 +17,29 @@
 <span class="fc bfc" id="L17" title="All 4 branches covered.">        switch (weather){</span>
             case sunny:
 <span class="fc" id="L19">               this.buffedType = &quot;Fire&quot;;</span>
-<span class="fc" id="L20">               this.DebuffedType = &quot;Water&quot;;</span>
+<span class="fc" id="L20">               this.debuffedType = &quot;Water&quot;;</span>
 <span class="fc" id="L21">               break;</span>
             case rainy:
 <span class="fc" id="L23">                this.buffedType = &quot;Water&quot;;</span>
-<span class="fc" id="L24">                this.DebuffedType = &quot;Fire&quot;;</span>
+<span class="fc" id="L24">                this.debuffedType = &quot;Fire&quot;;</span>
 <span class="fc" id="L25">                break;</span>
             case drought:
 <span class="fc" id="L27">                this.buffedType = &quot;Ground&quot;;</span>
-<span class="fc" id="L28">                this.DebuffedType = &quot;Normal&quot;;</span>
+<span class="fc" id="L28">                this.debuffedType = &quot;Normal&quot;;</span>
 <span class="fc" id="L29">                break;</span>
             default:
 <span class="fc" id="L31">                this.buffedType = &quot;&quot;;</span>
-<span class="fc" id="L32">                this.DebuffedType = &quot;&quot;;</span>
+<span class="fc" id="L32">                this.debuffedType = &quot;&quot;;</span>
                 break;
         }
 <span class="fc" id="L35">    }</span>
 
     public String GetBuffedType(){
-<span class="fc" id="L38">        return buffedType;</span>
+<span class="nc" id="L38">        return buffedType;</span>
     }
 
     public String getDebuffedType(){
-<span class="fc" id="L42">        return DebuffedType;</span>
+<span class="nc" id="L42">        return debuffedType;</span>
     }
 
 <span class="fc" id="L45">    public enum Weather {</span>

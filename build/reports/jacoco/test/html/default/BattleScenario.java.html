@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BattleScenario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Given</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">BattleScenario.java</span></div><h1>BattleScenario.java</h1><pre class="source lang-java linenums">public class BattleScenario {
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BattleScenario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Given</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">BattleScenario.java</span></div><h1>BattleScenario.java</h1><pre class="source lang-java linenums">import java.lang.Math;
+
+public class BattleScenario {
 
     Mascotmon mon1;
     Mascotmon mon2;
@@ -6,10 +8,10 @@
     Stats mon2Stats;
     Environment battleWeather;
 
-<span class="fc" id="L9">    public BattleScenario(Mascotmon pMon1, Mascotmon pMon2) {</span>
-<span class="fc" id="L10">        setMon1(pMon1);</span>
-<span class="fc" id="L11">        setMon2(pMon2);</span>
-<span class="fc" id="L12">    } </span>
+<span class="fc" id="L11">    public BattleScenario(Mascotmon pMon1, Mascotmon pMon2) {</span>
+<span class="fc" id="L12">        setMon1(pMon1);</span>
+<span class="fc" id="L13">        setMon2(pMon2);</span>
+<span class="fc" id="L14">    } </span>
 
     /**
      * Sets environment of the battlefield, and sets buff/debuff modifiers for all Mascotmons on the
@@ -19,28 +21,29 @@
      * @param pWeather is the weather enum to use from Environment class
      */
     public void setEnvironment(Environment.Weather pWeather) {
-<span class="fc" id="L22">        battleWeather = new Environment(pWeather);</span>
-<span class="fc" id="L23">    }</span>
-
-    public void initiateBattle() {
+<span class="fc" id="L24">        battleWeather = new Environment(pWeather);</span>
+<span class="fc" id="L25">    }</span>
+    //changed initiateBattle() from void, so that it will return a Mascotmon object so that I can test this method as well
+    public Mascotmon initiateBattle() {
 
         // initiate stats for mon1 and mon2
-<span class="nc" id="L28">        mon1Stats = new Stats(mon1.name);</span>
-<span class="nc" id="L29">        mon2Stats = new Stats(mon2.name);</span>
-<span class="nc" id="L30">        System.out.println(&quot;Woooo: &quot; + mon1Stats.health);</span>
+<span class="fc" id="L30">        mon1Stats = new Stats(mon1.name);</span>
+<span class="fc" id="L31">        mon2Stats = new Stats(mon2.name);</span>
+<span class="fc" id="L32">        System.out.println(&quot;Woooo: &quot; + mon1Stats.health);</span>
 
-<span class="nc" id="L32">        System.out.println(&quot;\nWelcome everyone to the Mascotmon training arena!&quot;);</span>
-<span class="nc" id="L33">        System.out.println(&quot;It is a &quot; + battleWeather.WEATHER.toString().toLowerCase()</span>
+<span class="fc" id="L34">        System.out.println(&quot;\nWelcome everyone to the Mascotmon training arena!&quot;);</span>
+<span class="fc" id="L35">        System.out.println(&quot;It is a &quot; + battleWeather.WEATHER.toString().toLowerCase()</span>
                 + &quot; day here at Frank Kush Field&quot;);
-<span class="nc" id="L35">        System.out.println(&quot;Today, on the attacking team we have &quot; + mon1.name + &quot; &quot; +</span>
+<span class="fc" id="L37">        System.out.println(&quot;Today, on the attacking team we have &quot; + mon1.name + &quot; &quot; +</span>
                 mon1.description);
-<span class="nc" id="L37">        System.out.println(&quot;Their opponent, on the defending team is &quot; + mon2.name + &quot; &quot; +</span>
+<span class="fc" id="L39">        System.out.println(&quot;Their opponent, on the defending team is &quot; + mon2.name + &quot; &quot; +</span>
                 mon2.description);
-<span class="nc" id="L39">        System.out.println(mon2.name + &quot; prepares for the incoming attack&quot;);</span>
+<span class="fc" id="L41">        System.out.println(mon2.name + &quot; prepares for the incoming attack&quot;);</span>
 
-<span class="nc" id="L41">        Mascotmon winner = fight();</span>
-<span class="nc" id="L42">        System.out.println(winner.name + &quot; has won with &quot; + winner.stats.health + &quot; health left&quot;);</span>
-<span class="nc" id="L43">    }</span>
+<span class="fc" id="L43">        Mascotmon winner = fight();</span>
+<span class="fc" id="L44">        System.out.println(winner.name + &quot; has won with &quot; + winner.stats.health + &quot; health left&quot;);</span>
+<span class="fc" id="L45">        return winner; //I added a return statement</span>
+    }
 
     /**
      * Sample fight scenario of two rounds.
@@ -48,7 +51,7 @@
      * damage output against opposing mascotmon. 
      */
     public Mascotmon fight() {
-<span class="fc" id="L51">        int round = 1;</span>
+<span class="fc" id="L54">        int round = 1;</span>
         double damage1;
         double damage2;
 
@@ -57,53 +60,57 @@
 
         while (true) {
             //Mon 1's turn:
-<span class="fc" id="L60">            System.out.println(&quot;\n&quot; + mon1.name + &quot; launches an attack against &quot; + mon2.name + &quot;!&quot;);</span>
-<span class="fc" id="L61">            attack1 = mon1.attack();</span>
+<span class="fc" id="L63">            System.out.println(&quot;\n&quot; + mon1.name + &quot; launches an attack against &quot; + mon2.name + &quot;!&quot;);</span>
+            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
+            // deterministic for testing
+<span class="fc" id="L66">            attack1 = new Attack(130.0, &quot;Ground&quot;);</span>
 
             //Calculate damage:
-<span class="fc" id="L64">            damage1 = calculateDamage(attack1, mon1, mon2);</span>
-<span class="fc" id="L65">            System.out.println(damage1 + &quot; damage dealt&quot;);</span>
+<span class="fc" id="L69">            damage1 = calculateDamage(attack1, mon1, mon2);</span>
+<span class="fc" id="L70">            System.out.println(damage1 + &quot; damage dealt&quot;);</span>
 
             //Adjust mon2's health:
-<span class="fc" id="L68">            mon2.stats.health = mon2.stats.health - damage1;</span>
-<span class="fc" id="L69">            System.out.println(mon2.name + &quot; has &quot; + mon2.stats.health + &quot; health left&quot;);</span>
+<span class="fc" id="L73">            mon2.stats.health = mon2.stats.health - damage1;</span>
+<span class="fc" id="L74">            System.out.println(mon2.name + &quot; has &quot; + mon2.stats.health + &quot; health left&quot;);</span>
 
             //Battle terminating condition:
-<span class="fc bfc" id="L72" title="All 2 branches covered.">            if (mon2.stats.health &lt;= 0.0){</span>
-<span class="fc" id="L73">                System.out.println(mon2.name + &quot; has fainted in round &quot; + round);</span>
-<span class="fc" id="L74">                return mon1;</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">            if (mon2.stats.health &lt;= 0.0){</span>
+<span class="fc" id="L78">                System.out.println(mon2.name + &quot; has fainted in round &quot; + round);</span>
+<span class="fc" id="L79">                return mon1;</span>
             }
 
             //Mon 2's turn:
-<span class="fc" id="L78">            System.out.println(&quot;\n&quot; + mon2.name  + &quot; launches an attack against &quot; + mon1.name + &quot;!&quot;);</span>
-<span class="fc" id="L79">            attack2 = mon2.attack();</span>
+<span class="fc" id="L83">            System.out.println(&quot;\n&quot; + mon2.name  + &quot; launches an attack against &quot; + mon1.name + &quot;!&quot;);</span>
+            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
+            // deterministic for testing
+<span class="fc" id="L86">            attack2 = new Attack(130.0, &quot;Ground&quot;);</span>
 
             //Calculate damage:
-<span class="fc" id="L82">            damage2 = calculateDamage(attack2, mon2, mon1);</span>
-<span class="fc" id="L83">            System.out.println(damage2 + &quot; damage dealt&quot;);</span>
+<span class="fc" id="L89">            damage2 = calculateDamage(attack2, mon2, mon1);</span>
+<span class="fc" id="L90">            System.out.println(damage2 + &quot; damage dealt&quot;);</span>
 
             //Adjust mon1's health:
-<span class="fc" id="L86">            mon1.stats.health = mon1.stats.health - damage2;</span>
-<span class="fc" id="L87">            System.out.println(mon1.name + &quot; has &quot; + mon1.stats.health + &quot; health left&quot;);</span>
+<span class="fc" id="L93">            mon1.stats.health = mon1.stats.health - damage2;</span>
+<span class="fc" id="L94">            System.out.println(mon1.name + &quot; has &quot; + mon1.stats.health + &quot; health left&quot;);</span>
 
             //Battle terminating condition:
-<span class="pc bpc" id="L90" title="1 of 2 branches missed.">            if (mon1.stats.health &lt;= 0.0){</span>
-<span class="nc" id="L91">                System.out.println(mon1.name + &quot; has fainted in round &quot; + round);</span>
-<span class="nc" id="L92">                return mon2;</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">            if (mon1.stats.health &lt;= 0.0){</span>
+<span class="fc" id="L98">                System.out.println(mon1.name + &quot; has fainted in round &quot; + round);</span>
+<span class="fc" id="L99">                return mon2;</span>
             }
-<span class="fc" id="L94">            round++;</span>
+<span class="fc" id="L101">            round++;</span>
         } //end while
     }
 
 
     public void setMon1(Mascotmon pMon){
-<span class="fc" id="L100">        mon1 = pMon;</span>
-<span class="fc" id="L101">    }</span>
+<span class="fc" id="L107">        mon1 = pMon;</span>
+<span class="fc" id="L108">    }</span>
 
 
     public void setMon2(Mascotmon pMon){
-<span class="fc" id="L105">        mon2 =  pMon;</span>
-<span class="fc" id="L106">    }</span>
+<span class="fc" id="L112">        mon2 =  pMon;</span>
+<span class="fc" id="L113">    }</span>
 
 
      /**
@@ -133,7 +140,28 @@
       * @return total damage output
       */
     public double calculateDamage(Attack pAttack, Mascotmon pAttacker, Mascotmon pDefender) {
-<span class="fc" id="L136">        return Math.round(pAttack.damage * 0.2);</span>
+        double skirmish;
+<span class="fc" id="L144">        double attackBonus = 1;</span>
+        //set type bonus for both monsters
+<span class="fc" id="L146">        pAttacker.setTypeBonuses(pDefender);</span>
+        //set weather bonus for both monsters
+<span class="fc" id="L148">        pAttacker.setWeatherBonus(battleWeather);</span>
+<span class="fc" id="L149">        pDefender.setWeatherBonus(battleWeather);</span>
+        //set attack bonus
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        if (pAttacker.type.compareTo(pAttack.type) == 0){</span>
+<span class="fc" id="L152">            attackBonus = Constants.ATTACK_BONUS;</span>
+        }
+        //check for &quot;None&quot; attack
+<span class="fc bfc" id="L155" title="All 2 branches covered.">        if (pAttack.type.compareTo(&quot;None&quot;) == 0){</span>
+<span class="fc" id="L156">            return Constants.NONE_ATTACK;</span>
+        }
+        //calculate and return the damage
+<span class="fc" id="L159">        skirmish = Math.round(pAttack.damage * attackBonus * pAttacker.typeBonus * pAttacker.weatherBonus - pDefender.stats.defense *</span>
+                pDefender.typeBonus * pDefender.weatherBonus);
+<span class="fc bfc" id="L161" title="All 2 branches covered.">        if (skirmish &lt; 0){</span>
+<span class="fc" id="L162">            return 1.0;</span>
+        }
+<span class="fc" id="L164">        return skirmish;</span>
     }
 
 }
