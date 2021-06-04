@@ -32,6 +32,7 @@ hs_err_pid*
 
 #intellij files
 *.idea
+build/reports/CodeCoverage/
 
 #gradle 7
 .gradle/7.0.2/
