@@ -30,8 +30,6 @@ hs_err_pid*
 *.DS_Store
 /bin/
 
-#intellij files
-*.idea
-
-#gradle 7
-.gradle/7.0.2/
+# gradle
+.gradle
+/build/
