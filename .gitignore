@@ -30,9 +30,7 @@ hs_err_pid*
 *.DS_Store
 /bin/
 
-#intellij files
-*.idea
-build/reports/CodeCoverage/
+# gradle
+.gradle
+/build/
 
-#gradle 7
-.gradle/7.0.2/
