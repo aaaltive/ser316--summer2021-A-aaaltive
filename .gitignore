@@ -30,6 +30,13 @@ hs_err_pid*
 *.DS_Store
 /bin/
 
+<<<<<<< HEAD
 ### Gradle ###
 .gradle
 /build/
+=======
+# gradle
+.gradle
+/build/
+
+>>>>>>> master
