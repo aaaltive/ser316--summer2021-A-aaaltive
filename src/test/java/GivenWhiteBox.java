@@ -4,6 +4,12 @@ import org.junit.Before;
 
 import org.junit.Test;
 
+/**
+ * The White Box Test class with whitebox tests.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
 
 public class GivenWhiteBox {
     @Before

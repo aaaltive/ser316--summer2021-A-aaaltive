@@ -1,3 +1,10 @@
+/**
+ * This is the Main class, the starting point for running the program.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class Main {
 
     /**

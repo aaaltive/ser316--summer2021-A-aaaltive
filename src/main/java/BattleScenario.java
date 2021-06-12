@@ -1,12 +1,19 @@
 import java.lang.Math;
 
+/**
+ *
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class BattleScenario {
 
-    Mascotmon mon1;
-    Mascotmon mon2;
-    Stats mon1Stats;
+    private Mascotmon mon2;
+    private Mascotmon mon1;
+    private Stats mon1Stats;
     //SER316 TASK 2 SPOTBUGS FIX
-    Environment battleWeather;
+    private Environment battleWeather;
 
     public BattleScenario(Mascotmon m1, Mascotmon m2) {
         setMon1(m1);
@@ -39,7 +46,7 @@ public class BattleScenario {
         System.out.println("Woooo: " + mon1Stats.getHealth());
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
-        System.out.println("It is a " + battleWeather.weather.toString().toLowerCase()
+        System.out.println("It is a " + battleWeather.getWeather().toString().toLowerCase()
                 + " day here at Frank Kush Field");
         System.out.println("Today, on the attacking team we have " + mon1.getName() + " " +
                 mon1.getDescription());
@@ -69,7 +76,7 @@ public class BattleScenario {
             System.out.println("\n" + mon1.getName() + " launches an attack against " + mon2.getName() + "!");
             //used the constructor for Attack class rather than attack() from class Mascotmon to
             // make the method deterministic for testing
-            attack1 = new Attack(130.0, "Ground");
+            attack1 = new Attack(Constants.TESTING_DAMAGE_VALUE, "Ground");
 
             //Calculate damage:
             damage1 = calculateDamage(attack1, mon1, mon2);
@@ -80,7 +87,7 @@ public class BattleScenario {
             System.out.println(mon2.getName() + " has " + mon2.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon2.getStats().getHealth() <= 0.0) {
+            if (mon2.getStats().getHealth() <= Constants.K_O) {
                 System.out.println(mon2.getName() + " has fainted in round " + round);
                 return mon1;
             }
@@ -90,7 +97,7 @@ public class BattleScenario {
                     mon1.getName() + "!");
             //used the constructor for Attack class rather than attack() from class Mascotmon
             // to make the method deterministic for testing
-            attack2 = new Attack(130.0, "Ground");
+            attack2 = new Attack(Constants.TESTING_DAMAGE_VALUE, "Ground");
 
             //Calculate damage:
             damage2 = calculateDamage(attack2, mon2, mon1);
@@ -101,7 +108,7 @@ public class BattleScenario {
             System.out.println(mon1.getName() + " has " + mon1.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon1.getStats().getHealth() <= 0.0) {
+            if (mon1.getStats().getHealth() <= Constants.K_O) {
                 System.out.println(mon1.getName() + " has fainted in round " + round);
                 return mon2;
             }
@@ -150,7 +157,7 @@ public class BattleScenario {
 
     public double calculateDamage(Attack attack, Mascotmon attacker, Mascotmon defender) {
 
-        double attackBonus = 1;
+        double attackBonus = Constants.NO_BONUS;
         //set Type bonus for both monsters
         attacker.setTypeBonuses(defender);
         //set weather bonus for both monsters
@@ -161,7 +168,7 @@ public class BattleScenario {
             attackBonus = Constants.ATTACK_BONUS;
         }
         //check for "None" attack
-        if (attack.getType().compareTo("None") == 0) {
+        if (attack.getType().compareTo("None") == Constants.NONE_ATTACK) {
             return Constants.NONE_ATTACK;
         }
         //calculate and return the damage
@@ -170,7 +177,7 @@ public class BattleScenario {
                 attacker.getWeatherBonus() - defender.getStats().getDefense() * defender.getTypeBonus() *
                 defender.getWeatherBonus());
         if (skirmish < 0) {
-            return 1.0;
+            return Constants.MIN_ATTACK_DAMAGE;
         }
         return skirmish;
     }

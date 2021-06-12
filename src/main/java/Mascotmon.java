@@ -1,5 +1,12 @@
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Class creates a Mascotmon that will be used in battle simulations.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class Mascotmon {
     private String description;
     private String type;
@@ -43,7 +50,7 @@ public class Mascotmon {
 
     private void setType() {
         Type t = new Type(name);
-        this.type = t.type;
+        this.type = t.getType();
     }
 
     /**
@@ -94,7 +101,7 @@ public class Mascotmon {
             case ALBERT:
                 if (attackNumber == 0) {
                     desc = " uses Iron Scales, increasing defense stat by 10%";
-                    stats.setDefense(stats.getDefense() * 1.10);
+                    stats.setDefense(stats.getDefense() * Constants.NO_ATTACK_MULTIPLIER);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Death Roll";
@@ -110,7 +117,7 @@ public class Mascotmon {
             case RALPHIE:
                 if (attackNumber == 0) {
                     desc = " uses Iron Hide, increasing defense stat by 10%";
-                    stats.setDefense(stats.getDefense() * 1.10);
+                    stats.setDefense(stats.getDefense() * Constants.NO_ATTACK_MULTIPLIER);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Ground Stomp";
@@ -126,7 +133,7 @@ public class Mascotmon {
             case SPARKY:
                 if (attackNumber == 0) {
                     desc = " uses Heat Up, increasing attack stat by 10%";
-                    stats.setAttack(stats.getAttack() * 1.10);
+                    stats.setAttack(stats.getAttack() * Constants.NO_ATTACK_MULTIPLIER);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Inferno";
@@ -143,7 +150,7 @@ public class Mascotmon {
             case BULLY:
                 if (attackNumber == 0) {
                     desc = " uses Sleep, increasing health stat by 10%";
-                    double health = stats.getHealth() * 1.10;
+                    double health = stats.getHealth() * Constants.NO_ATTACK_MULTIPLIER;
                     stats.setHealth(Math.round(health));
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
@@ -168,9 +175,9 @@ public class Mascotmon {
      */
 
     public void setWeatherBonus(Environment weather) {
-        if (this.type.compareTo(weather.buffedType) == 0) {
+        if (this.type.compareTo(weather.getBuffedType()) == 0) {
             this.weatherBonus = Constants.BONUS;
-        } else if (this.type.compareTo(weather.debuffedType) == 0) {
+        } else if (this.type.compareTo(weather.getDebuffedType()) == 0) {
             this.weatherBonus = Constants.DEBUFF;
         }
     }
@@ -210,7 +217,7 @@ public class Mascotmon {
                 }
                 break;
             default:  //SER316 TASK 2 SPOTBUGS FIX
-                this.typeBonus = 1;  //SER316 TASK 2 SPOTBUGS FIX
+                this.typeBonus = Constants.NO_BONUS;  //SER316 TASK 2 SPOTBUGS FIX
         }
     }
 

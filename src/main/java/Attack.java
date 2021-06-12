@@ -1,3 +1,10 @@
+/**
+ *
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class Attack {
 
     private String type;

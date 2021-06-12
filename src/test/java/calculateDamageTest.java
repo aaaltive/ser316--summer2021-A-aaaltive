@@ -8,6 +8,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Tests that all test the calculate damage method.
+ *
+ * @author Armand Altiveros
+ * @version 1.0
+ */
+
 public class calculateDamageTest {
     private BattleScenario createBattleScenario(Mascotmon a, Mascotmon d) throws Exception {
         return new BattleScenario(a, d);

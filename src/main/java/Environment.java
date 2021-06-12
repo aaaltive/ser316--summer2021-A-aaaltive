@@ -1,10 +1,22 @@
+/**
+ * Class creates an environment object that describes the weather and the buffed and
+ * debuffed types, and is held by a mascotmon.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class Environment {
 
-    Weather weather;
-    String buffedType;
-    String debuffedType;
+    private Weather weather;
+    private String buffedType;
+    private String debuffedType;
     //SER316 TASK 2 SPOTBUGS FIX
     //SER316 TASK 2 SPOTBUGS FIX
+
+    /**
+     * Default constructor for an environment.
+     */
 
     public Environment(){
         this(Weather.NEUTRAL);
@@ -40,13 +52,28 @@ public class Environment {
         }
     }
 
+    /**
+     * Getter method for buffedType.
+     * @return a string representing the buffedType
+     */
+
     public String getBuffedType() {
         return buffedType;
     }
 
+    /**
+     * Getter method for debuffedType.
+     * @return a string representing the debuffedType
+     */
+
     public String getDebuffedType() {
         return debuffedType;
     }
+
+    /**
+     * getter method for the weather variable.
+     * @return this value for weather, an enum.
+     */
 
     public Weather getWeather() {
         return weather;

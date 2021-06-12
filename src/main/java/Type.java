@@ -1,6 +1,17 @@
+/**
+ * Class sets up a Type object that is held by a mascotmon.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 public class Type {
 
-    String type;
+    private String type;
+
+    /**
+     * Default constructor for the Type objects.
+     */
 
     public Type() {
         type = "Normal";
@@ -21,5 +32,14 @@ public class Type {
         } else {
             type = "Normal";
         }
+    }
+
+    /**
+     * Getter method for type attribute.
+     * @return string representing the type.
+     */
+
+    public String getType() {
+        return type;
     }
 }

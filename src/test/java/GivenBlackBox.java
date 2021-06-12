@@ -13,6 +13,13 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 
+/**
+ * The provided black box test class with some additional test written by me.
+ *
+ * @author Armand Altiveros, from code provided in SER316 shell
+ * @version 1.0
+ */
+
 @RunWith(Parameterized.class)
 public class GivenBlackBox {
     private Class<BattleScenario> classUnderTest;
