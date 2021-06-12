@@ -1,57 +1,55 @@
 public class Environment {
 
-    private Weather WEATHER;
-    private String buffedType;
-    private String DebuffedType;
-    private double buffModifier;
-    private double debuffModifier;
+    Weather weather;
+    String buffedType;
+    String debuffedType;
+    //SER316 TASK 2 SPOTBUGS FIX
+    //SER316 TASK 2 SPOTBUGS FIX
 
     public Environment(){
         this(Weather.NEUTRAL);
     }
 
+    /**
+     * creates a weather type for a battle scenario and sets up the buffed and
+     * debuffed types.
+     * @param weather the weather type for the battle
+     */
+
     public Environment(Weather weather) {
-        this.WEATHER = weather;
-        this.buffModifier = 1.25;
-        this.debuffModifier = 0.75;
-        switch (weather){
+        this.weather = weather;
+        //SER316 TASK 2 SPOTBUGS FIX
+        //SER316 TASK 2 SPOTBUGS FIX
+        switch (weather) {
+                this.buffedType = "Fire";
+                this.debuffedType = "Water";
+                break;
             case SUNNY:
-               this.buffedType = "Fire";
-               this.DebuffedType = "Water";
-               break;
             case RAINY:
                 this.buffedType = "Water";
-                this.DebuffedType = "Fire";
+                this.debuffedType = "Fire";
                 break;
             case DROUGHT:
                 this.buffedType = "Ground";
-                this.DebuffedType = "Normal";
+                this.debuffedType = "Normal";
                 break;
             default:
                 this.buffedType = "";
-                this.DebuffedType = "";
+                this.debuffedType = "";
                 break;
         }
     }
 
-    public String getBuffedType(){
+    public String getBuffedType() {
         return buffedType;
     }
 
-    public String getDebuffedType(){
-        return DebuffedType;
+    public String getDebuffedType() {
+        return debuffedType;
     }
 
-    public Weather getWEATHER() {
+    public Weather getWeather() {
         return WEATHER;
-    }
-
-    public double getBuffModifier() {
-        return buffModifier;
-    }
-
-    public double getDebuffModifier() {
-        return debuffModifier;
     }
 
     public enum Weather {

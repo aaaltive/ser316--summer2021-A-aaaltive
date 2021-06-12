@@ -1,4 +1,10 @@
 public class Main {
+
+    /**
+     * The starting point for the program.
+     * @param args arguments, probably none.
+     */
+
     public static void main(String[] args) {
 
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
