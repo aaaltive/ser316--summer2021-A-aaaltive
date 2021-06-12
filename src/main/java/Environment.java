@@ -21,10 +21,10 @@ public class Environment {
         //SER316 TASK 2 SPOTBUGS FIX
         //SER316 TASK 2 SPOTBUGS FIX
         switch (weather) {
+            case SUNNY:
                 this.buffedType = "Fire";
                 this.debuffedType = "Water";
                 break;
-            case SUNNY:
             case RAINY:
                 this.buffedType = "Water";
                 this.debuffedType = "Fire";
@@ -49,7 +49,7 @@ public class Environment {
     }
 
     public Weather getWeather() {
-        return WEATHER;
+        return weather;
     }
 
     public enum Weather {

@@ -11,4 +11,13 @@ public class Attack {
     public double getDamage() {
         return damage;
     }
+
+    /**
+     * getter method for attack type.
+     * @return sring representing the attack type.
+     */
+
+    public String getType() {
+        return type;
+    }
 }

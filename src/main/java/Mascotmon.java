@@ -7,7 +7,7 @@ public class Mascotmon {
     private Stats stats;
     private double weatherBonus = 1.0;
     private double typeBonus = 1.0;
-    private int buf_counter = 0;
+    private int bufCounter = 0;
 
     /**
      * The constructor for a Mascotmon.
@@ -24,7 +24,7 @@ public class Mascotmon {
         } else {
             name = Name.BULLY;
         }
-        getType();
+        setType();
         setStats();
         setDescription();
     }
@@ -36,14 +36,23 @@ public class Mascotmon {
 
     public Mascotmon(Name name) {
         this.name = name;
-        getType();
+        setType();
         setStats();
         setDescription();
     }
 
-    private void getType() {
+    private void setType() {
         Type t = new Type(name);
         this.type = t.type;
+    }
+
+    /**
+     * getter method for type string.
+     * @return string that represents type.
+     */
+
+    public String getType() {
+        return type;
     }
 
     private void setStats() {
@@ -85,67 +94,67 @@ public class Mascotmon {
             case ALBERT:
                 if (attackNumber == 0) {
                     desc = " uses Iron Scales, increasing defense stat by 10%";
-                    stats.defense *= 1.10;
+                    stats.setDefense(stats.getDefense() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Death Roll";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 } else if (attackNumber == 2) {
                     desc = " uses Chomp";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else {
                     desc = " uses Aqua Cannon";
-                    attack = new Attack(stats.attack, "Water");
+                    attack = new Attack(stats.getAttack(), "Water");
                 }
                 break;
             case RALPHIE:
                 if (attackNumber == 0) {
                     desc = " uses Iron Hide, increasing defense stat by 10%";
-                    stats.defense *= 1.10;
+                    stats.setDefense(stats.getDefense() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Ground Stomp";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 } else if (attackNumber == 2) {
                     desc = " uses Headbutt";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else {
                     desc = " uses Flaming Horn";
-                    attack = new Attack(stats.attack, "Fire");
+                    attack = new Attack(stats.getAttack(), "Fire");
                 }
                 break;
             case SPARKY:
                 if (attackNumber == 0) {
                     desc = " uses Heat Up, increasing attack stat by 10%";
-                    stats.attack *= 1.10;
+                    stats.setAttack(stats.getAttack() * 1.10);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Inferno";
-                    attack = new Attack(stats.attack, "Fire");
+                    attack = new Attack(stats.getAttack(), "Fire");
                 } else if (attackNumber == 2) {
                     desc = " uses Quick Attack";
-                    attack = new Attack(stats.attack, "Normal");
-                    System.out.println("Attack value: " + stats.attack);
+                    attack = new Attack(stats.getAttack(), "Normal");
+                    System.out.println("Attack value: " + stats.getAttack());
                 } else {
                     desc = " uses Earthquake";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 }
                 break;
             case BULLY:
                 if (attackNumber == 0) {
                     desc = " uses Sleep, increasing health stat by 10%";
-                    double health = stats.health * 1.10;
-                    stats.health = Math.round(health);
+                    double health = stats.getHealth() * 1.10;
+                    stats.setHealth(Math.round(health));
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
                     desc = " uses Body Slam";
-                    attack = new Attack(stats.attack, "Normal");
+                    attack = new Attack(stats.getAttack(), "Normal");
                 } else if (attackNumber == 2) {
                     desc = " uses Splash";
-                    attack = new Attack(stats.attack, "Water");
+                    attack = new Attack(stats.getAttack(), "Water");
                 } else {
                     desc = " uses Ground Pound";
-                    attack = new Attack(stats.attack, "Ground");
+                    attack = new Attack(stats.getAttack(), "Ground");
                 }
         }
             
@@ -203,6 +212,51 @@ public class Mascotmon {
             default:  //SER316 TASK 2 SPOTBUGS FIX
                 this.typeBonus = 1;  //SER316 TASK 2 SPOTBUGS FIX
         }
+    }
+
+    /**
+     * getter method for name.
+     * @return the name of the monster
+     */
+
+    public Name getName() {
+        return name;
+    }
+
+    /**
+     * getter method for description.
+     * @return the description of the monster
+     */
+
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * getter for mascotmon stats.
+     * @return returns the stats object for mascotmon it is called on
+     */
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    /**
+     * getter for attack bonus value.
+     * @return returns the attack bonus for the mascotmon.
+     */
+
+    public double getTypeBonus() {
+        return typeBonus;
+    }
+
+    /**
+     * getter for the weatherBonus.
+     * @return the value of the weather bonus for this mascotmon.
+     */
+
+    public double getWeatherBonus() {
+        return weatherBonus;
     }
 
     public enum Name {

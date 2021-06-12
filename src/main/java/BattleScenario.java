@@ -34,9 +34,9 @@ public class BattleScenario {
     public Mascotmon initiateBattle() {
 
         // initiate stats for mon1 and mon2
-        mon1Stats = new Stats(mon1.name);
+        mon1Stats = new Stats(mon1.getName());
         //SER316 TASK 2 SPOTBUGS FIX
-        System.out.println("Woooo: " + mon1Stats.health);
+        System.out.println("Woooo: " + mon1Stats.getHealth());
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
         System.out.println("It is a " + battleWeather.weather.toString().toLowerCase()
@@ -48,7 +48,7 @@ public class BattleScenario {
         System.out.println(mon2.getName() + " prepares for the incoming attack");
 
         Mascotmon winner = fight();
-        System.out.println(winner.name + " has won with " + winner.stats.health + " health left");
+        System.out.println(winner.getName() + " has won with " + winner.getStats().getHealth() + " health left");
         return winner; //I added a return statement
     }
 
@@ -66,7 +66,7 @@ public class BattleScenario {
 
         while (true) {
             //Mon 1's turn:
-            System.out.println("\n" + mon1.name + " launches an attack against " + mon2.name + "!");
+            System.out.println("\n" + mon1.getName() + " launches an attack against " + mon2.getName() + "!");
             //used the constructor for Attack class rather than attack() from class Mascotmon to
             // make the method deterministic for testing
             attack1 = new Attack(130.0, "Ground");
@@ -80,14 +80,14 @@ public class BattleScenario {
             System.out.println(mon2.getName() + " has " + mon2.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon2.stats.health <= 0.0) {
-                System.out.println(mon2.name + " has fainted in round " + round);
+            if (mon2.getStats().getHealth() <= 0.0) {
+                System.out.println(mon2.getName() + " has fainted in round " + round);
                 return mon1;
             }
 
             //Mon 2's turn:
-            System.out.println("\n" + mon2.name  + " launches an attack against " +
-                    mon1.name + "!");
+            System.out.println("\n" + mon2.getName()  + " launches an attack against " +
+                    mon1.getName() + "!");
             //used the constructor for Attack class rather than attack() from class Mascotmon
             // to make the method deterministic for testing
             attack2 = new Attack(130.0, "Ground");
@@ -101,8 +101,8 @@ public class BattleScenario {
             System.out.println(mon1.getName() + " has " + mon1.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon1.stats.health <= 0.0) {
-                System.out.println(mon1.name + " has fainted in round " + round);
+            if (mon1.getStats().getHealth() <= 0.0) {
+                System.out.println(mon1.getName() + " has fainted in round " + round);
                 return mon2;
             }
             round++;
@@ -157,18 +157,18 @@ public class BattleScenario {
         attacker.setWeatherBonus(battleWeather);
         defender.setWeatherBonus(battleWeather);
         //set attack bonus
-        if (attacker.type.compareTo(attack.type) == 0) {
+        if (attacker.getType().compareTo(attack.getType()) == 0) {
             attackBonus = Constants.ATTACK_BONUS;
         }
         //check for "None" attack
-        if (attack.type.compareTo("None") == 0) {
+        if (attack.getType().compareTo("None") == 0) {
             return Constants.NONE_ATTACK;
         }
         //calculate and return the damage
         double skirmish;
-        skirmish = Math.round(attack.damage * attackBonus * attacker.typeBonus *
-                attacker.weatherBonus - defender.stats.defense * defender.typeBonus *
-                defender.weatherBonus);
+        skirmish = Math.round(attack.getDamage() * attackBonus * attacker.getTypeBonus() *
+                attacker.getWeatherBonus() - defender.getStats().getDefense() * defender.getTypeBonus() *
+                defender.getWeatherBonus());
         if (skirmish < 0) {
             return 1.0;
         }
