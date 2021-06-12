@@ -26,7 +26,7 @@ public class GivenWhiteBox {
         //Create First battle scenario with two mons
         BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         //Set the weather
-        fight1.setEnvironment(Environment.Weather.sunny);
+        fight1.setEnvironment(Environment.Weather.SUNNY);
         
         Mascotmon mon = fight1.fight();
         assertEquals(mon, attacker1);

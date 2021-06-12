@@ -1,13 +1,13 @@
 public class Environment {
 
-    Weather WEATHER;
-    String buffedType;
-    String DebuffedType;
-    double buffModifier;
-    double debuffModifier;
+    private Weather WEATHER;
+    private String buffedType;
+    private String DebuffedType;
+    private double buffModifier;
+    private double debuffModifier;
 
     public Environment(){
-        this(Weather.neutral);
+        this(Weather.NEUTRAL);
     }
 
     public Environment(Weather weather) {
@@ -15,15 +15,15 @@ public class Environment {
         this.buffModifier = 1.25;
         this.debuffModifier = 0.75;
         switch (weather){
-            case sunny:
+            case SUNNY:
                this.buffedType = "Fire";
                this.DebuffedType = "Water";
                break;
-            case rainy:
+            case RAINY:
                 this.buffedType = "Water";
                 this.DebuffedType = "Fire";
                 break;
-            case drought:
+            case DROUGHT:
                 this.buffedType = "Ground";
                 this.DebuffedType = "Normal";
                 break;
@@ -34,7 +34,7 @@ public class Environment {
         }
     }
 
-    public String GetBuffedType(){
+    public String getBuffedType(){
         return buffedType;
     }
 
@@ -42,7 +42,19 @@ public class Environment {
         return DebuffedType;
     }
 
+    public Weather getWEATHER() {
+        return WEATHER;
+    }
+
+    public double getBuffModifier() {
+        return buffModifier;
+    }
+
+    public double getDebuffModifier() {
+        return debuffModifier;
+    }
+
     public enum Weather {
-        sunny, rainy, drought, neutral
+        SUNNY, RAINY, DROUGHT, NEUTRAL
     }
 }
