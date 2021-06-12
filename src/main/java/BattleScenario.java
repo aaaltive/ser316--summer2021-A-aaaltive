@@ -5,7 +5,7 @@ public class BattleScenario {
     Mascotmon mon1;
     Mascotmon mon2;
     Stats mon1Stats;
-    Stats mon2Stats;
+    //SER316 TASK 2 SPOTBUGS FIX
     Environment battleWeather;
 
     public BattleScenario(Mascotmon m1, Mascotmon m2) {
@@ -35,7 +35,7 @@ public class BattleScenario {
 
         // initiate stats for mon1 and mon2
         mon1Stats = new Stats(mon1.name);
-        mon2Stats = new Stats(mon2.name);
+        //SER316 TASK 2 SPOTBUGS FIX
         System.out.println("Woooo: " + mon1Stats.health);
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
@@ -157,7 +157,7 @@ public class BattleScenario {
         attacker.setWeatherBonus(battleWeather);
         defender.setWeatherBonus(battleWeather);
         //set attack bonus
-        if (attacker.Type.compareTo(attack.type) == 0) {
+        if (attacker.type.compareTo(attack.type) == 0) {
             attackBonus = Constants.ATTACK_BONUS;
         }
         //check for "None" attack

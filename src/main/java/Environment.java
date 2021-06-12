@@ -3,8 +3,8 @@ public class Environment {
     Weather weather;
     String buffedType;
     String debuffedType;
-    double buffModifier;
-    double debuffModifier;
+    //SER316 TASK 2 SPOTBUGS FIX
+    //SER316 TASK 2 SPOTBUGS FIX
 
     public Environment() {
         this(Weather.neutral);
@@ -18,8 +18,8 @@ public class Environment {
 
     public Environment(Weather weather) {
         this.weather = weather;
-        this.buffModifier = 1.25;
-        this.debuffModifier = 0.75;
+        //SER316 TASK 2 SPOTBUGS FIX
+        //SER316 TASK 2 SPOTBUGS FIX
         switch (weather) {
             case sunny:
                 this.buffedType = "Fire";

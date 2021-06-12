@@ -2,7 +2,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Mascotmon {
     String description;
-    public String Type;
+    public String type;
     public Name name;
     public Stats stats;
     public double weatherBonus = 1.0; 
@@ -43,7 +43,7 @@ public class Mascotmon {
 
     private void getType() {
         Type t = new Type(name);
-        this.Type = t.type;
+        this.type = t.type;
     }
 
     private void getStats() {
@@ -159,9 +159,9 @@ public class Mascotmon {
      */
 
     public void setWeatherBonus(Environment weather) {
-        if (this.Type.compareTo(weather.buffedType) == 0) {
+        if (this.type.compareTo(weather.buffedType) == 0) {
             this.weatherBonus = Constants.BONUS;
-        } else if (this.Type.compareTo(weather.debuffedType) == 0) {
+        } else if (this.type.compareTo(weather.debuffedType) == 0) {
             this.weatherBonus = Constants.DEBUFF;
         }
     }
@@ -172,34 +172,36 @@ public class Mascotmon {
      */
 
     public void setTypeBonuses(Mascotmon opponent) {
-        switch (this.Type) {
+        switch (this.type) {
             case "Fire":
-                if (opponent.Type.compareTo("Water") == 0) {
+                if (opponent.type.compareTo("Water") == 0) {
                     this.typeBonus = Constants.DEBUFF;
                     opponent.typeBonus = Constants.BONUS;
-                } else if (opponent.Type.compareTo("Ground") == 0) {
+                } else if (opponent.type.compareTo("Ground") == 0) {
                     this.typeBonus = Constants.BONUS;
                     opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
             case "Water":
-                if (opponent.Type.compareTo("Ground") == 0) {
+                if (opponent.type.compareTo("Ground") == 0) {
                     this.typeBonus = Constants.DEBUFF;
                     opponent.typeBonus = Constants.BONUS;
-                } else if (opponent.Type.compareTo("Fire") == 0) {
+                } else if (opponent.type.compareTo("Fire") == 0) {
                     this.typeBonus = Constants.BONUS;
                     opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
             case "Ground":
-                if (opponent.Type.compareTo("Fire") == 0) {
+                if (opponent.type.compareTo("Fire") == 0) {
                     this.typeBonus = Constants.DEBUFF;
                     opponent.typeBonus = Constants.BONUS;
-                } else if (opponent.Type.compareTo("Water") == 0) {
+                } else if (opponent.type.compareTo("Water") == 0) {
                     this.typeBonus = Constants.BONUS;
                     opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
+            default:  //SER316 TASK 2 SPOTBUGS FIX
+                this.typeBonus = 1;  //SER316 TASK 2 SPOTBUGS FIX
         }
     }
 
