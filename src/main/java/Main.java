@@ -1,4 +1,10 @@
 public class Main {
+
+    /**
+     * The starting point for the program.
+     * @param args arguments, probably none.
+     */
+
     public static void main(String[] args) {
 
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
@@ -16,9 +22,9 @@ public class Main {
 
         //Create Second battle scenario with two mons
         BattleScenario fight2 = new BattleScenario(attacker2, defender2); 
-//        Set the weather
+        //Set the weather
         fight2.setEnvironment(Environment.Weather.rainy);
-//        Initiate battle
+        //Initiate battle
         fight2.initiateBattle();
         System.out.println("This is the end of the training simulation");
     }

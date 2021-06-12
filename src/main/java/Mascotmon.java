@@ -2,12 +2,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Mascotmon {
     String description;
-    public String type;
+    public String Type;
     public Name name;
     public Stats stats;
     public double weatherBonus = 1.0; 
     public double typeBonus = 1.0;
-    public int buf_counter = 0;
+    public int bufCounter = 0;
+
+    /**
+     * The constructor for a Mascotmon.
+     */
 
     public Mascotmon() {
         int rand = ThreadLocalRandom.current().nextInt(0, 4);
@@ -25,6 +29,11 @@ public class Mascotmon {
         getDescription();
     }
 
+    /**
+     * constructor nor a Mascotmon with a name that is not set up in program.
+     * @param name the name chosen to make a non-default monster.
+     */
+
     public Mascotmon(Name name) {
         this.name = name;
         getType();
@@ -33,8 +42,8 @@ public class Mascotmon {
     }
 
     private void getType() {
-        type t = new type(name);
-        this.type = t.type;
+        Type t = new Type(name);
+        this.Type = t.type;
     }
 
     private void getStats() {
@@ -52,138 +61,143 @@ public class Mascotmon {
      * Method randomly determines an attack to use based on the defending Mascotmon and
      * returns the base damage of the attack selected. The self-buff (attackNumber 0) can only be
      * used 3 times during a battle.
-     * @return attack damage
-     * You can assume that this method uses the values it is supposed to use and is correct. 
+     * @return attack damage. You can assume that this method uses the values it is supposed to
+     *     use and is correct.
      */
     public Attack attack() {
-        double attack_Damage = 0;
+        double attackDamage = 0;
         int attackNumber = 0;
 
         while (true) {
             attackNumber = ThreadLocalRandom.current().nextInt(0, 4);
-            if (attackNumber == 0 && buf_counter <= 2) {
-                buf_counter++;
+            if (attackNumber == 0 && bufCounter <= 2) {
+                bufCounter++;
                 break;
-            }
-            else if (attackNumber != 0){
+            } else if (attackNumber != 0) {
                 break;
             }
         }
 
-        String _desc= "";
+        String desc = "";
         Attack attack = null;
 
         switch (name) {
             case ALBERT:
                 if (attackNumber == 0) {
-                    _desc = " uses Iron Scales, increasing defense stat by 10%";
+                    desc = " uses Iron Scales, increasing defense stat by 10%";
                     stats.defense *= 1.10;
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
-                    _desc = " uses Death Roll";
+                    desc = " uses Death Roll";
                     attack = new Attack(stats.attack, "Ground");
                 } else if (attackNumber == 2) {
-                    _desc = " uses Chomp";
+                    desc = " uses Chomp";
                     attack = new Attack(stats.attack, "Normal");
                 } else {
-                    _desc = " uses Aqua Cannon";
+                    desc = " uses Aqua Cannon";
                     attack = new Attack(stats.attack, "Water");
                 }
                 break;
             case RALPHIE:
                 if (attackNumber == 0) {
-                    _desc = " uses Iron Hide, increasing defense stat by 10%";
+                    desc = " uses Iron Hide, increasing defense stat by 10%";
                     stats.defense *= 1.10;
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
-                    _desc = " uses Ground Stomp";
+                    desc = " uses Ground Stomp";
                     attack = new Attack(stats.attack, "Ground");
                 } else if (attackNumber == 2) {
-                    _desc = " uses Headbutt";
+                    desc = " uses Headbutt";
                     attack = new Attack(stats.attack, "Normal");
                 } else {
-                    _desc = " uses Flaming Horn";
+                    desc = " uses Flaming Horn";
                     attack = new Attack(stats.attack, "Fire");
                 }
                 break;
             case SPARKY:
                 if (attackNumber == 0) {
-                    _desc = " uses Heat Up, increasing attack stat by 10%";
+                    desc = " uses Heat Up, increasing attack stat by 10%";
                     stats.attack *= 1.10;
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
-                    _desc = " uses Inferno";
+                    desc = " uses Inferno";
                     attack = new Attack(stats.attack, "Fire");
                 } else if (attackNumber == 2) {
-                    _desc = " uses Quick Attack";
+                    desc = " uses Quick Attack";
                     attack = new Attack(stats.attack, "Normal");
                     System.out.println("Attack value: " + stats.attack);
                 } else {
-                    _desc = " uses Earthquake";
+                    desc = " uses Earthquake";
                     attack = new Attack(stats.attack, "Ground");
                 }
                 break;
             case BULLY:
                 if (attackNumber == 0) {
-                    _desc = " uses Sleep, increasing health stat by 10%";
+                    desc = " uses Sleep, increasing health stat by 10%";
                     double health = stats.health * 1.10;
                     stats.health = Math.round(health);
                     attack = new Attack(0, "None");
                 } else if (attackNumber == 1) {
-                    _desc = " uses Body Slam";
+                    desc = " uses Body Slam";
                     attack = new Attack(stats.attack, "Normal");
                 } else if (attackNumber == 2) {
-                    _desc = " uses Splash";
+                    desc = " uses Splash";
                     attack = new Attack(stats.attack, "Water");
                 } else {
-                    _desc = " uses Ground Pound";
+                    desc = " uses Ground Pound";
                     attack = new Attack(stats.attack, "Ground");
                 }
         }
             
-        System.out.println(name.toString().toLowerCase() + _desc);
+        System.out.println(name.toString().toLowerCase() + desc);
         return attack;
     }
 
+    /**
+     * sets up the weather bonus variable for the mascotmon.
+     * @param weather weather Type for this battle.
+     */
+
     public void setWeatherBonus(Environment weather) {
-        if (this.type.compareTo(weather.buffedType)==0){
+        if (this.Type.compareTo(weather.buffedType) == 0) {
             this.weatherBonus = Constants.BONUS;
-        }
-        else if (this.type.compareTo(weather.debuffedType)==0){
+        } else if (this.Type.compareTo(weather.debuffedType) == 0) {
             this.weatherBonus = Constants.DEBUFF;
         }
     }
 
-    public void setTypeBonuses(Mascotmon m) {
-        switch (this.type){
+    /**
+     * Sets the typeBonus variable for the mascotmon.
+     * @param opponent the mascotmon that this one is fighting against.
+     */
+
+    public void setTypeBonuses(Mascotmon opponent) {
+        switch (this.Type) {
             case "Fire":
-                if (m.type.compareTo("Water") == 0){
+                if (opponent.Type.compareTo("Water") == 0) {
                     this.typeBonus = Constants.DEBUFF;
-                    m.typeBonus = Constants.BONUS;
-                }
-                else if (m.type.compareTo("Ground") == 0){
+                    opponent.typeBonus = Constants.BONUS;
+                } else if (opponent.Type.compareTo("Ground") == 0) {
                     this.typeBonus = Constants.BONUS;
-                    m.typeBonus = Constants.DEBUFF;
+                    opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
             case "Water":
-                if (m.type.compareTo("Ground") == 0){
+                if (opponent.Type.compareTo("Ground") == 0) {
                     this.typeBonus = Constants.DEBUFF;
-                    m.typeBonus = Constants.BONUS;
-                }
-                else if (m.type.compareTo("Fire") == 0){
+                    opponent.typeBonus = Constants.BONUS;
+                } else if (opponent.Type.compareTo("Fire") == 0) {
                     this.typeBonus = Constants.BONUS;
-                    m.typeBonus = Constants.DEBUFF;
+                    opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
             case "Ground":
-                if (m.type.compareTo("Fire") == 0){
+                if (opponent.Type.compareTo("Fire") == 0) {
                     this.typeBonus = Constants.DEBUFF;
-                    m.typeBonus = Constants.BONUS;
-                }
-                else if (m.type.compareTo("Water") == 0){
+                    opponent.typeBonus = Constants.BONUS;
+                } else if (opponent.Type.compareTo("Water") == 0) {
                     this.typeBonus = Constants.BONUS;
-                    m.typeBonus = Constants.DEBUFF;
+                    opponent.typeBonus = Constants.DEBUFF;
                 }
                 break;
         }

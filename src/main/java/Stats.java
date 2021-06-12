@@ -4,11 +4,20 @@ public class Stats {
     double defense;
     double health;
 
+    /**
+     * Default constructor for the Stats objects.
+     */
+
     public Stats() {
         attack = 50;
         defense = 50;
         health = 100;
     }
+
+    /**
+     * Constructor with param for the Stats objects.
+     * @param name name of the mascotmon this stat is for.
+     */
 
     public Stats(Mascotmon.Name name) {
         switch (name) {
@@ -27,7 +36,7 @@ public class Stats {
                 defense = 40;
                 health = 90;
                 break;
-            case BULLY:
+            default:
                 attack = 40;
                 defense = 40;
                 health = 110;

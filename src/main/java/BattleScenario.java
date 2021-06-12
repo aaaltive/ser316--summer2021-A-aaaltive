@@ -8,22 +8,29 @@ public class BattleScenario {
     Stats mon2Stats;
     Environment battleWeather;
 
-    public BattleScenario(Mascotmon pMon1, Mascotmon pMon2) {
-        setMon1(pMon1);
-        setMon2(pMon2);
+    public BattleScenario(Mascotmon m1, Mascotmon m2) {
+        setMon1(m1);
+        setMon2(m2);
     } 
 
     /**
      * Sets environment of the battlefield, and sets buff/debuff modifiers for all Mascotmons on the
-     * field. If the Mascotmon's type is buffed by the environment,they receive a 25% multiplier to
-     * their attack and defense stat. If the Mascotmon's type is debuffed by the environment, they
+     * field. If the Mascotmon's Type is buffed by the environment,they receive a 25% multiplier to
+     * their attack and defense stat. If the Mascotmon's Type is debuffed by the environment, they
      * receive a reduction of 25% to their attack and defense stat.
-     * @param pWeather is the weather enum to use from Environment class
+     * @param weather is the weather enum to use from Environment class
      */
-    public void setEnvironment(Environment.Weather pWeather) {
-        battleWeather = new Environment(pWeather);
+    public void setEnvironment(Environment.Weather weather) {
+        battleWeather = new Environment(weather);
     }
-    //changed initiateBattle() from void, so that it will return a Mascotmon object so that I can test this method as well
+
+    //changed initiateBattle() from void, so that it will return a Mascotmon object so that I can
+    // test this method as well
+
+    /**
+     * Initiates a battle.
+     * @return the Mascotmon that won the battle
+     */
     public Mascotmon initiateBattle() {
 
         // initiate stats for mon1 and mon2
@@ -32,7 +39,7 @@ public class BattleScenario {
         System.out.println("Woooo: " + mon1Stats.health);
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
-        System.out.println("It is a " + battleWeather.WEATHER.toString().toLowerCase()
+        System.out.println("It is a " + battleWeather.weather.toString().toLowerCase()
                 + " day here at Frank Kush Field");
         System.out.println("Today, on the attacking team we have " + mon1.name + " " +
                 mon1.description);
@@ -54,15 +61,14 @@ public class BattleScenario {
         int round = 1;
         double damage1;
         double damage2;
-
         Attack attack1;
         Attack attack2;
 
         while (true) {
             //Mon 1's turn:
             System.out.println("\n" + mon1.name + " launches an attack against " + mon2.name + "!");
-            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
-            // deterministic for testing
+            //used the constructor for Attack class rather than attack() from class Mascotmon to
+            // make the method deterministic for testing
             attack1 = new Attack(130.0, "Ground");
 
             //Calculate damage:
@@ -74,15 +80,16 @@ public class BattleScenario {
             System.out.println(mon2.name + " has " + mon2.stats.health + " health left");
 
             //Battle terminating condition:
-            if (mon2.stats.health <= 0.0){
+            if (mon2.stats.health <= 0.0) {
                 System.out.println(mon2.name + " has fainted in round " + round);
                 return mon1;
             }
 
             //Mon 2's turn:
-            System.out.println("\n" + mon2.name  + " launches an attack against " + mon1.name + "!");
-            //used the constructor for Attack class rather than attack() from class Mascotmon to make the method
-            // deterministic for testing
+            System.out.println("\n" + mon2.name  + " launches an attack against " +
+                    mon1.name + "!");
+            //used the constructor for Attack class rather than attack() from class Mascotmon
+            // to make the method deterministic for testing
             attack2 = new Attack(130.0, "Ground");
 
             //Calculate damage:
@@ -94,7 +101,7 @@ public class BattleScenario {
             System.out.println(mon1.name + " has " + mon1.stats.health + " health left");
 
             //Battle terminating condition:
-            if (mon1.stats.health <= 0.0){
+            if (mon1.stats.health <= 0.0) {
                 System.out.println(mon1.name + " has fainted in round " + round);
                 return mon2;
             }
@@ -103,62 +110,66 @@ public class BattleScenario {
     }
 
 
-    public void setMon1(Mascotmon pMon){
-        mon1 = pMon;
+    public void setMon1(Mascotmon m) {
+        mon1 = m;
     }
 
 
-    public void setMon2(Mascotmon pMon){
-        mon2 =  pMon;
+    public void setMon2(Mascotmon m) {
+        mon2 =  m;
     }
 
 
-     /**
-      * TO DO: Implement for Assignment 3
-      * This method implements the calculation of damage for one specific attack.
-      * One monster attacks with the given damage, the dealt damage is then calculated through
-      * (pAttackDamage * pAttacker.attack * pAttacker.weatherBonus * pAttacker.typeBonus) -
-                (pDefender.stats.defense * pDefender.weatherBonus * pDefender.typeBonus)
-      * If the initial pAttackDamage is 0, then the damage dealt is 0. If the totalDamage calculated
-      * is negative, the totalDamage dealt should be 1. Any positive value is the total damage dealt.
-      * Weather bonus: see the Environment which you can assume is correct. You need to check though if the weather bonus is applied 
-      * correctly, since maybe the method does not use the environment correctly. 
-      * or debuffed based on the weather. EG. fire monsters have a stat advantage of +25% in sunny weather
-      * while they have a stat disadvantage of -25% in the rain.
-      * If the attack chosen, matches the monsters type, the attacker will get an extra 20% on its attack.
-      * Type bonus: Certain monsters have an attack bonus against others:
-      *     Fire against Water: Water gains 25% while Fire looses 25%
-      *     Fire against Ground: Fire gains 25% while Ground looses 25%
-      *     Ground against Water: Ground gains 25% while Water looses 25%
-      *     Normal mon: never gain any type bonus and are weaker during droughts.
-      * These bonuses do not stack up, they are just applied for every attack. 
-      * @param pAttack is the attack value given to the method where that attack value is based on the 
-      *                 monsters damage value
-      * @param pAttacker the attacking monster
-      * @param pDefender the defending monster (the defending monster will never get damage)
-      * to calculate damage output.
-      * @return total damage output
-      */
-    public double calculateDamage(Attack pAttack, Mascotmon pAttacker, Mascotmon pDefender) {
-        double skirmish;
+    /**
+     * TO DO: Implement for Assignment 3
+     * This method implements the calculation of damage for one specific attack.
+     * One monster attacks with the given damage, the dealt damage is then calculated through
+     * (pAttackDamage * attacker.attack * attacker.weatherBonus * attacker.typeBonus) -
+               (defender.stats.defense * defender.weatherBonus * defender.typeBonus)
+     * If the initial pAttackDamage is 0, then the damage dealt is 0. If the totalDamage calculated
+     * is negative, the totalDamage dealt should be 1. Any positive value is the total damage
+     * dealt. Weather bonus: see the Environment which you can assume is correct. You need to
+     * check though if the weather bonus is applied correctly, since maybe the method does not use
+     * the environment correctly. or debuffed based on the weather. EG. fire monsters have a stat
+     * advantage of +25% in sunny weather while they have a stat disadvantage of -25% in the rain.
+     * If the attack chosen, matches the monsters Type, the attacker will get an extra 20% on its
+     * attack.
+     * Type bonus: Certain monsters have an attack bonus against others:
+     *     Fire against Water: Water gains 25% while Fire looses 25%
+     *     Fire against Ground: Fire gains 25% while Ground looses 25%
+     *     Ground against Water: Ground gains 25% while Water looses 25%
+     *     Normal mon: never gain any Type bonus and are weaker during droughts.
+     * These bonuses do not stack up, they are just applied for every attack.
+     * @param attack is the attack value given to the method where that attack value is based on
+     *                the monsters damage value
+     * @param attacker the attacking monster
+     * @param defender the defending monster (the defending monster will never get damage)
+     *                to calculate damage output.
+     * @return total damage output
+     */
+
+    public double calculateDamage(Attack attack, Mascotmon attacker, Mascotmon defender) {
+
         double attackBonus = 1;
-        //set type bonus for both monsters
-        pAttacker.setTypeBonuses(pDefender);
+        //set Type bonus for both monsters
+        attacker.setTypeBonuses(defender);
         //set weather bonus for both monsters
-        pAttacker.setWeatherBonus(battleWeather);
-        pDefender.setWeatherBonus(battleWeather);
+        attacker.setWeatherBonus(battleWeather);
+        defender.setWeatherBonus(battleWeather);
         //set attack bonus
-        if (pAttacker.type.compareTo(pAttack.type) == 0){
+        if (attacker.Type.compareTo(attack.type) == 0) {
             attackBonus = Constants.ATTACK_BONUS;
         }
         //check for "None" attack
-        if (pAttack.type.compareTo("None") == 0){
+        if (attack.type.compareTo("None") == 0) {
             return Constants.NONE_ATTACK;
         }
         //calculate and return the damage
-        skirmish = Math.round(pAttack.damage * attackBonus * pAttacker.typeBonus * pAttacker.weatherBonus - pDefender.stats.defense *
-                pDefender.typeBonus * pDefender.weatherBonus);
-        if (skirmish < 0){
+        double skirmish;
+        skirmish = Math.round(attack.damage * attackBonus * attacker.typeBonus *
+                attacker.weatherBonus - defender.stats.defense * defender.typeBonus *
+                defender.weatherBonus);
+        if (skirmish < 0) {
             return 1.0;
         }
         return skirmish;
