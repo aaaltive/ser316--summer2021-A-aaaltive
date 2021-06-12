@@ -1,7 +1,7 @@
 public class type
 {
 
-    String type;
+    private String type;
 
     public type()
     {
@@ -19,5 +19,9 @@ public class type
             type = "Fire";
         else
             type = "Normal";
+    }
+
+    public String getType() {
+        return type;
     }
 }

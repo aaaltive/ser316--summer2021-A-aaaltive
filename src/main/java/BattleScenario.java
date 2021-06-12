@@ -1,10 +1,10 @@
 public class BattleScenario {
 
-    Mascotmon mon1;
-    Mascotmon mon2;
-    Stats mon1Stats;
-    Stats mon2Stats;
-    Environment battleWeather;
+    private Mascotmon mon1;
+    private Mascotmon mon2;
+    private Stats mon1Stats;
+    private Stats mon2Stats;
+    private Environment battleWeather;
 
     public BattleScenario(Mascotmon pMon1, Mascotmon pMon2) {
         setMon1(pMon1);
@@ -25,21 +25,21 @@ public class BattleScenario {
     public void initiateBattle() {
 
         // initiate stats for mon1 and mon2
-        mon1Stats = new Stats(mon1.name);
-        mon2Stats = new Stats(mon2.name);
-        System.out.println("Woooo: " + mon1Stats.health);
+        mon1Stats = new Stats(mon1.getName());
+        mon2Stats = new Stats(mon2.getName());
+        System.out.println("Woooo: " + mon1Stats.getHealth());
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
-        System.out.println("It is a " + battleWeather.WEATHER.toString().toLowerCase()
+        System.out.println("It is a " + battleWeather.getWEATHER().toString().toLowerCase()
                 + " day here at Frank Kush Field");
-        System.out.println("Today, on the attacking team we have " + mon1.name + " " +
-                mon1.description);
-        System.out.println("Their opponent, on the defending team is " + mon2.name + " " +
-                mon2.description);
-        System.out.println(mon2.name + " prepares for the incoming attack");
+        System.out.println("Today, on the attacking team we have " + mon1.getName() + " " +
+                mon1.getDescription());
+        System.out.println("Their opponent, on the defending team is " + mon2.getName() + " " +
+                mon2.getDescription());
+        System.out.println(mon2.getName() + " prepares for the incoming attack");
 
         Mascotmon winner = fight();
-        System.out.println(winner.name + " has won with " + winner.stats.health + " health left");
+        System.out.println(winner.getName() + " has won with " + winner.getStats().getHealth() + " health left");
     }
 
     /**
@@ -57,7 +57,7 @@ public class BattleScenario {
 
         while (true) {
             //Mon 1's turn:
-            System.out.println("\n" + mon1.name + " launches an attack against " + mon2.name + "!");
+            System.out.println("\n" + mon1.getName() + " launches an attack against " + mon2.getName() + "!");
             attack1 = mon1.attack();
 
             //Calculate damage:
@@ -65,17 +65,17 @@ public class BattleScenario {
             System.out.println(damage1 + " damage dealt");
 
             //Adjust mon2's health:
-            mon2.stats.health = mon2.stats.health - damage1;
-            System.out.println(mon2.name + " has " + mon2.stats.health + " health left");
+            mon2.getStats().setHealth(mon2.getStats().getHealth() - damage1);
+            System.out.println(mon2.getName() + " has " + mon2.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon2.stats.health <= 0.0){
-                System.out.println(mon2.name + " has fainted in round " + round);
+            if (mon2.getStats().getHealth() <= 0.0){
+                System.out.println(mon2.getName() + " has fainted in round " + round);
                 return mon1;
             }
 
             //Mon 2's turn:
-            System.out.println("\n" + mon2.name  + " launches an attack against " + mon1.name + "!");
+            System.out.println("\n" + mon2.getName()  + " launches an attack against " + mon1.getName() + "!");
             attack2 = mon2.attack();
 
             //Calculate damage:
@@ -83,12 +83,12 @@ public class BattleScenario {
             System.out.println(damage2 + " damage dealt");
 
             //Adjust mon1's health:
-            mon1.stats.health = mon1.stats.health - damage2;
-            System.out.println(mon1.name + " has " + mon1.stats.health + " health left");
+            mon1.getStats().setHealth(mon1.getStats().getHealth() - damage2);
+            System.out.println(mon1.getName() + " has " + mon1.getStats().getHealth() + " health left");
 
             //Battle terminating condition:
-            if (mon1.stats.health <= 0.0){
-                System.out.println(mon1.name + " has fainted in round " + round);
+            if (mon1.getStats().getHealth() <= 0.0){
+                System.out.println(mon1.getName() + " has fainted in round " + round);
                 return mon2;
             }
             round++;
@@ -111,7 +111,7 @@ public class BattleScenario {
       * This method implements the calculation of damage for one specific attack.
       * One monster attacks with the given damage, the dealt damage is then calculated through
       * (pAttackDamage * pAttacker.attack * pAttacker.weatherBonus * pAttacker.typeBonus) -
-                (pDefender.stats.defense * pDefender.weatherBonus * pDefender.typeBonus)
+                (pDefender.getStats().defense * pDefender.weatherBonus * pDefender.typeBonus)
       * If the initial pAttackDamage is 0, then the damage dealt is 0. If the totalDamage calculated
       * is negative, the totalDamage dealt should be 1. Any positive value is the total damage dealt.
       * Weather bonus: see the Environment which you can assume is correct. You need to check though if the weather bonus is applied 
@@ -133,7 +133,7 @@ public class BattleScenario {
       * @return total damage output
       */
     public double calculateDamage(Attack pAttack, Mascotmon pAttacker, Mascotmon pDefender) {
-        return Math.round(pAttack.damage * 0.2);
+        return Math.round(pAttack.getDamage() * 0.2);
     }
 
 }
