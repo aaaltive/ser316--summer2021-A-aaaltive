@@ -22,18 +22,17 @@ public class Description {
      * @param name the name of the mascot.
      */
 
-    public Description(Mascotmon.Name name) {
-        String n = name.toString();
-        if (n.equals("ALBERT")) {
+    public Description(String name) {
+        if (name.equals("ALBERT")) {
             description = "The Alligator";
-        } else if (n.equals("RALPHIE")) {
+        } else if (name.equals("RALPHIE")) {
             description = "The Buffalo";
-        } else if (n.equals("SPARKY")) {
+        } else if (name.equals("SPARKY")) {
             description = "The Sun Devil";
-        } else if (n.equals("BULLY")) {
+        } else if (name.equals("BULLY")) {
             description = "The Bull Dog";
         } else {
-            description = "New mascot";
+            description = "New custom mascot";
         }
     }
 

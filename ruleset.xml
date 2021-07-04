@@ -31,8 +31,21 @@
 		<properties>
         <property name="reportLevel" value="10"/>
     </properties>
-</rule>
-<rule ref="category/java/bestpractices.xml/LooseCoupling" />
+	</rule>
+	<rule ref="category/java/bestpractices.xml/LooseCoupling" />
 
+	<!--My added rules-->
+	<!--Check for code Smell: long parameter list-->
+	<rule ref="category/java/design.xml/ExcessiveParameterList">
+		<properties>
+			<property name="minimum" value="10.0" />
+		</properties>
+	</rule>
+	<!--Check for code Smell: Case Statements-->
+	<rule ref="category/java/design.xml/SwitchDensity">
+		<properties>
+			<property name="minimum" value="10.0" />
+		</properties>
+	</rule>
 
 </ruleset>

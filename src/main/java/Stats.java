@@ -26,19 +26,19 @@ public class Stats {
      * @param name name of the mascotmon this stat is for.
      */
 
-    public Stats(Mascotmon.Name name) {
+    public Stats(String name) {
         switch (name) {
-            case ALBERT:
+            case "ALBERT":
                 attack = 60;
                 defense = 40;
                 health = 100;
                 break;
-            case RALPHIE:
+            case "RALPHIE":
                 attack = 30;
                 defense = 65;
                 health = 105;
                 break;
-            case SPARKY:
+            case "SPARKY":
                 attack = 70;
                 defense = 40;
                 health = 90;

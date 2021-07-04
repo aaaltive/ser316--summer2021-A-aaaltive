@@ -22,12 +22,12 @@ public class Type {
      * @param name name of the mascot who's type we are getting.
      */
 
-    public Type(Mascotmon.Name name) {
-        if (name.equals(Mascotmon.Name.ALBERT)) {
+    public Type(String name) {
+        if (name.compareTo("ALBERT") == 0) {
             type = "Water";
-        } else if (name.equals(Mascotmon.Name.RALPHIE)) {
+        } else if (name.compareTo("RALPHIE") == 0) {
             type = "Ground";
-        } else if (name.equals(Mascotmon.Name.SPARKY)) {
+        } else if (name.compareTo("SPARKY") == 0) {
             type = "Fire";
         } else {
             type = "Normal";

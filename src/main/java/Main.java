@@ -14,10 +14,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender2 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        MascotmonFactory factory = new MascotmonFactory();
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
+        Mascotmon attacker2 = factory.getMascotmon("BULLY");
+        Mascotmon defender2 = factory.getMascotmon("RALPHIE");
         
         //Create First battle scenario with two mons
         BattleScenario fight1 = new BattleScenario(attacker1, defender1); 

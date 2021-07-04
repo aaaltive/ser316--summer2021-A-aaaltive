@@ -9,15 +9,15 @@ import java.lang.Math;
 
 public class BattleScenario {
 
-    private Mascotmon mon2;
-    private Mascotmon mon1;
+    private Mascotmon defender;
+    private Mascotmon attacker;
     private Stats mon1Stats;
     //SER316 TASK 2 SPOTBUGS FIX
     private Environment battleWeather;
 
     public BattleScenario(Mascotmon m1, Mascotmon m2) {
-        setMon1(m1);
-        setMon2(m2);
+        setAttacker(m1);
+        setDefender(m2);
     } 
 
     /**
@@ -41,18 +41,18 @@ public class BattleScenario {
     public Mascotmon initiateBattle() {
 
         // initiate stats for mon1 and mon2
-        mon1Stats = new Stats(mon1.getName());
+        mon1Stats = new Stats(attacker.getName());
         //SER316 TASK 2 SPOTBUGS FIX
         System.out.println("Woooo: " + mon1Stats.getHealth());
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");
         System.out.println("It is a " + battleWeather.getWeather().toString().toLowerCase()
                 + " day here at Frank Kush Field");
-        System.out.println("Today, on the attacking team we have " + mon1.getName() + " " +
-                mon1.getDescription());
-        System.out.println("Their opponent, on the defending team is " + mon2.getName() + " " +
-                mon2.getDescription());
-        System.out.println(mon2.getName() + " prepares for the incoming attack");
+        System.out.println("Today, on the attacking team we have " + attacker.getName() + " " +
+                attacker.getDescription());
+        System.out.println("Their opponent, on the defending team is " + defender.getName() + " " +
+                defender.getDescription());
+        System.out.println(defender.getName() + " prepares for the incoming attack");
 
         Mascotmon winner = fight();
         System.out.println(winner.getName() + " has won with " + winner.getStats().getHealth() + " health left");
@@ -70,62 +70,57 @@ public class BattleScenario {
         double damage2;
         Attack attack1;
         Attack attack2;
+        Mascotmon winner = null;
 
-        while (true) {
-            //Mon 1's turn:
-            System.out.println("\n" + mon1.getName() + " launches an attack against " + mon2.getName() + "!");
-            //used the constructor for Attack class rather than attack() from class Mascotmon to
-            // make the method deterministic for testing
-            attack1 = new Attack(Constants.TESTING_DAMAGE_VALUE, "Ground");
-
-            //Calculate damage:
-            damage1 = calculateDamage(attack1, mon1, mon2);
-            System.out.println(damage1 + " damage dealt");
-
-            //Adjust mon2's health:
-            mon2.getStats().setHealth(mon2.getStats().getHealth() - damage1);
-            System.out.println(mon2.getName() + " has " + mon2.getStats().getHealth() + " health left");
-
-            //Battle terminating condition:
-            if (mon2.getStats().getHealth() <= Constants.K_O) {
-                System.out.println(mon2.getName() + " has fainted in round " + round);
-                return mon1;
-            }
-
-            //Mon 2's turn:
-            System.out.println("\n" + mon2.getName()  + " launches an attack against " +
-                    mon1.getName() + "!");
-            //used the constructor for Attack class rather than attack() from class Mascotmon
-            // to make the method deterministic for testing
-            attack2 = new Attack(Constants.TESTING_DAMAGE_VALUE, "Ground");
-
-            //Calculate damage:
-            damage2 = calculateDamage(attack2, mon2, mon1);
-            System.out.println(damage2 + " damage dealt");
-
-            //Adjust mon1's health:
-            mon1.getStats().setHealth(mon1.getStats().getHealth() - damage2);
-            System.out.println(mon1.getName() + " has " + mon1.getStats().getHealth() + " health left");
-
-            //Battle terminating condition:
-            if (mon1.getStats().getHealth() <= Constants.K_O) {
-                System.out.println(mon1.getName() + " has fainted in round " + round);
-                return mon2;
-            }
+        while (winner == null) {
             round++;
+            //Mon 1's turn:
+            winner = makeOneAttack(round);
+            reverseRoles();
         } //end while
+        return winner;
     }
 
+    /**
+     * performs one attack and defense. Helper method for fight.
+     */
 
-    public void setMon1(Mascotmon m) {
-        mon1 = m;
+    public Mascotmon makeOneAttack(int round) {
+        double damage;
+        Attack attack;
+        System.out.println("\n" + attacker.getName() + " launches an attack against " + defender.getName() + "!");
+        //used the constructor for Attack class rather than attack() from class Mascotmon to
+        // make the method deterministic for testing
+        attack = new Attack(Constants.TESTING_DAMAGE_VALUE, "Ground");
+
+        //Calculate damage:
+        damage = calculateDamage(attack, attacker, defender);
+        System.out.println(damage + " damage dealt");
+
+        //Adjust mon2's health:
+        defender.getStats().setHealth(defender.getStats().getHealth() - damage);
+        System.out.println(defender.getName() + " has " + defender.getStats().getHealth() + " health left");
+        //Battle terminating condition:
+        if (defender.getStats().getHealth() <= Constants.K_O) {
+            System.out.println(defender.getName() + " has fainted in round " + round/2);
+            return attacker;
+        }
+        return null;
     }
 
-
-    public void setMon2(Mascotmon m) {
-        mon2 =  m;
+    public void reverseRoles(){
+        Mascotmon temp = attacker;
+        attacker = defender;
+        defender = temp;
     }
 
+    public void setAttacker(Mascotmon m) {
+        attacker = m;
+    }
+
+    public void setDefender(Mascotmon m) {
+        defender =  m;
+    }
 
     /**
      * TO DO: Implement for Assignment 3
