@@ -22,9 +22,9 @@ public class GivenWhiteBox {
      */
     @Test
     public void BvsANeutral_AttackerShouldWin() {
-        // One Student
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
+        MascotmonFactory factory = new MascotmonFactory();
+        Mascotmon attacker1 = factory.getMascotmon("BULLY");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
         
         //Create First battle scenario with two mons
         BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
@@ -40,9 +40,9 @@ public class GivenWhiteBox {
      */
     @Test
     public void SvsBullyNeutral_DefenderShouldWin() {
-        // One Student
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        MascotmonFactory factory = new MascotmonFactory();
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         //Create First battle scenario with two mons
         BattleScenario fight1 = new BattleScenario(attacker1, defender1);

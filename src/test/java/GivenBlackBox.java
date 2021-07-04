@@ -64,9 +64,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsRNeutralGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("RALPHIE");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsRNeutralGround");
@@ -87,9 +88,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsBRainyGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsBRainyGround");
@@ -110,9 +112,10 @@ public class GivenBlackBox {
      */
     @Test
     public void RvsBDroughtWater() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("RALPHIE");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    RvsBDroughtWater");
@@ -133,9 +136,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsRSunnyGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("RALPHIE");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsRSunnyGround");
@@ -156,9 +160,10 @@ public class GivenBlackBox {
      */
     @Test
     public void RvsADroughtGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
+        Mascotmon attacker1 = factory.getMascotmon("RALPHIE");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    RvsADroughtGround");
@@ -180,9 +185,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsSRainyFire() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("SPARKY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsSRainyFire");
@@ -203,9 +209,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsBNeutralWater() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsBNeutralWater");
@@ -226,9 +233,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsRNeutralFire() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("RALPHIE");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsRNeutralFire");
@@ -249,9 +257,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsBSunnyFire() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsBSunnyFire");
@@ -272,9 +281,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsBNeutralGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsBNeutralGround");
@@ -295,9 +305,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsBSunnyGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsBSunnyGround");
@@ -318,9 +329,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsBDroughtGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsBDroughtGround");
@@ -341,9 +353,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsBRAinyWater() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsBRAinyWater");
@@ -364,9 +377,10 @@ public class GivenBlackBox {
      */
     @Test
     public void BvsSNeutralNone() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+        Mascotmon attacker1 = factory.getMascotmon("BULLY");
+        Mascotmon defender1 = factory.getMascotmon("SPARKY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    BvsSNeutralNone");
@@ -387,9 +401,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsRSunnyFire() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("RALPHIE");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsRSunnyFire");
@@ -410,9 +425,10 @@ public class GivenBlackBox {
      */
     @Test
     public void RvsASunnyNormal() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
+        Mascotmon attacker1 = factory.getMascotmon("RALPHIE");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    RvsASunnyNormal");
@@ -433,9 +449,10 @@ public class GivenBlackBox {
      */
     @Test
     public void RvsSSunnyNormal() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+        Mascotmon attacker1 = factory.getMascotmon("RALPHIE");
+        Mascotmon defender1 = factory.getMascotmon("SPARKY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    RvsSSunnyNormal");
@@ -456,9 +473,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsBDroughtFire() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsBDroughtFire");
@@ -479,9 +497,10 @@ public class GivenBlackBox {
      */
     @Test
     public void SvsASunnyGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
+        Mascotmon attacker1 = factory.getMascotmon("SPARKY");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    SvsASunnyGround");
@@ -502,9 +521,10 @@ public class GivenBlackBox {
      */
     @Test
     public void BvsSNeutralGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+        Mascotmon attacker1 = factory.getMascotmon("BULLY");
+        Mascotmon defender1 = factory.getMascotmon("SPARKY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    BvsSNeutralGround");
@@ -525,9 +545,10 @@ public class GivenBlackBox {
      */
     @Test
     public void B200vsSNeutralGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
+        Mascotmon attacker1 = factory.getMascotmon("BULLY");
+        Mascotmon defender1 = factory.getMascotmon("SPARKY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    BvsSNeutralGround");
@@ -548,9 +569,10 @@ public class GivenBlackBox {
      */
     @Test
     public void AvsASunnyGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
+        Mascotmon attacker1 = factory.getMascotmon("ALBERT");
+        Mascotmon defender1 = factory.getMascotmon("ALBERT");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    AvsASunnyGround");
@@ -571,9 +593,10 @@ public class GivenBlackBox {
      */
     @Test
     public void BvsBNeutralGround() throws Exception {
+        MascotmonFactory factory = new MascotmonFactory();
 
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker1 = factory.getMascotmon("BULLY");
+        Mascotmon defender1 = factory.getMascotmon("BULLY");
 
         BattleScenario fight1 = createBattleScenario(attacker1, defender1);
         System.out.println("    BvsBNeutralGround");
